@@ -1,28 +1,23 @@
 <script lang="ts" setup>
-import axios from "axios";
 import {computed, ref} from "vue";
 import {each, filter, map, remove, union} from "lodash-es";
+import data from "./language/dict_zh.json";
 
 type Dict = [title: string, keywords: string, type: string, content: string, url?: string]
 
-const items = ref();
+const items = data as Dict[];
 const search = ref();
 const currentItem = ref<Dict>();
-
-axios.get("/src/language/dict_zh.json")
-    .then(response => {
-      items.value = response.data;
-    });
 
 const trees = computed(() => {
   const result: Record<string, Dict[]> = {};
 
   const types = union(
-      map(items.value, '2')
+      map(items, '2')
   );
 
   types.forEach(type => {
-    result[type] = filter(items.value, item => type === item[2]);
+    result[type] = filter(items, item => type === item[2]);
   });
 
   if (search.value) {
