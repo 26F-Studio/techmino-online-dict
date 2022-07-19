@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import {computed, ref} from "vue";
+import {computed, ref, watch} from "vue";
 import {each, filter, map, remove, union} from "lodash-es";
 import data from "./language/dict_zh.json";
+import {Icon} from "@vicons/utils";
+import {Menu2} from "@vicons/tabler";
 
 type Dict = [title: string, keywords: string, type: string, content: string, url?: string]
 
@@ -30,6 +32,30 @@ const trees = computed(() => {
 
   return result;
 });
+
+const back = ref();
+const menu = ref();
+const menu_collapsed = ref(false);
+
+watch(menu_collapsed, newState => {
+  if (!menu.value || !back.value) {
+    return;
+  }
+
+  if (newState) {
+    menu.value.classList.add('show');
+    back.value.classList.add('show');
+  } else {
+    menu.value.classList.remove('show');
+    back.value.classList.remove('show');
+  }
+});
+
+function closeMenu() {
+  if (menu.value && menu_collapsed.value) {
+    menu_collapsed.value = false;
+  }
+}
 </script>
 
 <template>
@@ -39,7 +65,12 @@ const trees = computed(() => {
     <input v-model="search" class="search-input" placeholder="搜点什么"/>
 
     <div class="dict">
-      <div class="tree">
+      <div ref="back" class="mobile_back" @click="closeMenu"/>
+      <icon size="20" class="mobile_menu" @click="menu_collapsed = !menu_collapsed">
+        <menu2/>
+      </icon>
+
+      <div ref="menu" class="tree">
         <div v-for="(items, type) in trees" class="row">
           <span class="title">
             {{ type }}
@@ -87,13 +118,65 @@ body {
 .title {
   text-align: center;
   margin-top: 50px;
-  color: white
+  color: white;
 }
 
 .container {
   width: 50%;
   margin: 50px auto;
-  text-align: center
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile_menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block !important;
+  }
+
+  .mobile_back.show {
+    opacity: 0.9;
+  }
+
+  .mobile_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    transition: opacity 0.5s;
+    background: black;
+    opacity: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .container .dict .tree {
+    position: absolute;
+    width: 50% !important;
+    top: 0;
+    left: -100%;
+    background-color: #2c3e50;
+    border-right: none !important;
+    overflow: scroll;
+    padding: 0 10px !important;
+    height: 100%;
+    transition: left 0.5s;
+  }
+
+  .container .dict .tree.show {
+    left: 0;
+  }
+}
+
+.mobile_menu {
+  display: none;
 }
 
 .container .search-input {
@@ -121,6 +204,10 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
+  padding: 10px;
+  border-right: solid 2px #bbb;
+  border-radius: 2px;
+  width: 20%;
 }
 
 .container .dict .title {
