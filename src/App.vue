@@ -136,6 +136,7 @@ body {
   }
 
   .mobile_back.show {
+    z-index: 0;
     opacity: 0.9;
   }
 
@@ -145,10 +146,10 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
     transition: opacity 0.5s;
     background: black;
     opacity: 0;
+    z-index: -114514;
   }
 
   .container {
