@@ -56,21 +56,29 @@ function closeMenu() {
     menu_collapsed.value = false;
   }
 }
+
+const isMobile = ref(screen.width <= 768);
+window.addEventListener('resize', () => {
+  isMobile.value = screen.width <= 768;
+})
 </script>
 
 <template>
   <h1 class="title">Techmino 在线词典</h1>
 
   <div class="container">
-    <input v-model="search" class="search-input" placeholder="搜点什么"/>
+    <input v-if="!isMobile" v-model="search" class="search-input" placeholder="搜点什么"/>
+    <div v-else class="line"/>
 
     <div class="dict">
       <div ref="back" class="mobile_back" @click="closeMenu"/>
-      <icon size="20" class="mobile_menu" @click="menu_collapsed = !menu_collapsed">
+      <icon class="mobile_menu" size="20" @click="menu_collapsed = !menu_collapsed">
         <menu2/>
       </icon>
 
       <div ref="menu" class="tree">
+        <input v-if="isMobile" v-model="search" class="search-input" placeholder="搜点什么"/>
+
         <div v-for="(items, type) in trees" class="row">
           <span class="title">
             {{ type }}
@@ -115,6 +123,11 @@ body {
 </style>
 
 <style scoped>
+.line {
+  border-bottom: 2px solid #bbb;
+  border-radius: 2px;
+}
+
 .title {
   text-align: center;
   margin-top: 50px;
@@ -173,6 +186,11 @@ body {
 
   .container .dict .tree.show {
     left: 0;
+  }
+
+  .container .search-input {
+    width: 100% !important;
+    margin: 10px 0;
   }
 }
 
