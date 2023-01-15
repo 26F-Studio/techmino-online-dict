@@ -124,6 +124,7 @@ const langs = computed(() => {
     } as Record<availableLangCodes, {
         title: string;
         search: string;
+        tags: string;
     }>;
 
     const items = files[currentLang.value];
