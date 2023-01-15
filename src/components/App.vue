@@ -151,7 +151,9 @@ const langs = computed(() => {
                             </n-divider>
 
                             <n-space :size="0" vertical>
-                                <n-button v-for="item in items" text @click="current = item">
+                                <n-button v-for="item in items"
+                                          :type="(currentItem?.title === item.title ? 'success' : 'default')" text
+                                          @click="current = item">
                                     {{ item.title }}
                                 </n-button>
                             </n-space>
@@ -192,7 +194,9 @@ const langs = computed(() => {
                                     </n-divider>
 
                                     <n-space :size="0" vertical>
-                                        <n-button v-for="item in items" text
+                                        <n-button v-for="item in items"
+                                                  :type="(currentItem?.title === item.title ? 'success' : 'default')"
+                                                  text
                                                   @click="tempHideSelectorInNav = true; current = item">
                                             {{ item.title }}
                                         </n-button>
@@ -213,7 +217,10 @@ const langs = computed(() => {
                                             </n-divider>
 
                                             <n-space :size="0" vertical>
-                                                <n-button v-for="item in items" text @click="current = item">
+                                                <n-button v-for="item in items"
+                                                          :type="(currentItem?.title === item.title ? 'success' : 'default')"
+                                                          text
+                                                          @click="current = item">
                                                     {{ item.title }}
                                                 </n-button>
                                             </n-space>
@@ -223,16 +230,26 @@ const langs = computed(() => {
 
                                 <n-grid-item :span="4" class="lg:ml-10 lg:mt-5">
                                     <n-space v-if="currentItem" vertical>
-                                        <n-h2>{{ currentItem.title }}</n-h2>
+                                        <n-h2>{{ currentItem?.title }}</n-h2>
                                         <n-text v-html="currentItem.content"/>
 
-                                        <n-button v-if="currentItem.link" :href="currentItem.link"
-                                                  class="mt-5 float-right"
-                                                  tag="a">
-                                            <template #icon>
-                                                <n-icon :component="EarthFilled"/>
-                                            </template>
-                                        </n-button>
+                                        <n-space class="mt-5 items-end" justify="space-between">
+                                            <n-space size="small" v-if="currentItem.tags">
+                                                <n-text>{{ langs['tags'] }}:&nbsp;</n-text>
+                                                <n-button v-for="tag in currentItem.tags.split(' ')" text type="info"
+                                                          @click="search = tag">
+                                                    {{ tag }}
+                                                </n-button>
+                                            </n-space>
+
+                                            <n-el v-else/>
+
+                                            <n-button v-if="currentItem.link" :href="currentItem.link" tag="a">
+                                                <template #icon>
+                                                    <n-icon :component="EarthFilled"/>
+                                                </template>
+                                            </n-button>
+                                        </n-space>
                                     </n-space>
 
                                     <n-empty v-else/>
