@@ -42,7 +42,35 @@ export function parse(code: string) {
 
     const variables = {
         FNNS: false,
-        'CHAR.mino.T': '123'
+        'CHAR.mino.Z': '<i class="font-[proportional] block-f0040"></i>',
+        'CHAR.mino.S': '<i class="font-[proportional] block-f0041"></i>',
+        'CHAR.mino.J': '<i class="font-[proportional] block-f0042"></i>',
+        'CHAR.mino.L': '<i class="font-[proportional] block-f0043"></i>',
+        'CHAR.mino.T': '<i class="font-[proportional] block-f0044"></i>',
+        'CHAR.mino.O': '<i class="font-[proportional] block-f0045"></i>',
+        'CHAR.mino.I': '<i class="font-[proportional] block-f0046"></i>',
+        'CHAR.mino.Z5': '<i class="font-[proportional] block-f0047"></i>',
+        'CHAR.mino.S5': '<i class="font-[proportional] block-f0048"></i>',
+        'CHAR.mino.P': '<i class="font-[proportional] block-f0049"></i>',
+        'CHAR.mino.Q': '<i class="font-[proportional] block-f004a"></i>',
+        'CHAR.mino.F': '<i class="font-[proportional] block-f004b"></i>',
+        'CHAR.mino.E': '<i class="font-[proportional] block-f004c"></i>',
+        'CHAR.mino.T5': '<i class="font-[proportional] block-f004d"></i>',
+        'CHAR.mino.U': '<i class="font-[proportional] block-f004e"></i>',
+        'CHAR.mino.V': '<i class="font-[proportional] block-f004f"></i>',
+        'CHAR.mino.W': '<i class="font-[proportional] block-f0050"></i>',
+        'CHAR.mino.X': '<i class="font-[proportional] block-f0051"></i>',
+        'CHAR.mino.J5': '<i class="font-[proportional] block-f0052"></i>',
+        'CHAR.mino.L5': '<i class="font-[proportional] block-f0053"></i>',
+        'CHAR.mino.R': '<i class="font-[proportional] block-f0054"></i>',
+        'CHAR.mino.Y': '<i class="font-[proportional] block-f0055"></i>',
+        'CHAR.mino.N': '<i class="font-[proportional] block-f0056"></i>',
+        'CHAR.mino.H': '<i class="font-[proportional] block-f0057"></i>',
+        'CHAR.mino.I5': '<i class="font-[proportional] block-f0058"></i>',
+        'CHAR.mino.I3': '<i class="font-[proportional] block-f0059"></i>',
+        'CHAR.mino.C': '<i class="font-[proportional] block-f005a"></i>',
+        'CHAR.mino.I2': '<i class="font-[proportional] block-f005b"></i>',
+        'CHAR.mino.O1': '<i class="font-[proportional] block-f005c"></i>'
     } as Record<string, unknown>;
 
     const ast = parseLua(code);

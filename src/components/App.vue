@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import "@/styles/blocks.scss";
 import dict_en from "../../Game/parts/language/dict_en.lua?raw";
 import dict_ja from "../../Game/parts/language/dict_ja.lua?raw";
 import dict_zh from "../../Game/parts/language/dict_zh.lua?raw";
@@ -259,10 +260,3 @@ const langs = computed(() => {
         </n-layout>
     </n-config-provider>
 </template>
-
-<style scoped>
-@font-face {
-    font-family: "proportional";
-    src: url("../Game/parts/fonts/proportional.otf");
-}
-</style>
