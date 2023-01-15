@@ -62,7 +62,12 @@ const items = computed(() => {
 });
 
 const finalItems = computed(() => {
-    const result = {} as Record<string, object[]>;
+    const result = {} as Record<string, {
+        title: string | null;
+        content: string | null;
+        tags: string | null;
+        link: string | null;
+    }[]>;
 
     const filteredItems = items.value.filter(item => {
         if (!item || !search.value) {
@@ -115,7 +120,10 @@ const langs = computed(() => {
         en: lang_en,
         ja: lang_ja,
         zh: lang_zh
-    } as Record<availableLangCodes, Record<string, string>>;
+    } as Record<availableLangCodes, {
+        title: string;
+        search: string;
+    }>;
 
     const items = files[currentLang.value];
 
