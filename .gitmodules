@@ -1,0 +1,3 @@
+[submodule "Techmino"]
+	path = Game
+	url = https://github.com/26F-Studio/Techmino.git

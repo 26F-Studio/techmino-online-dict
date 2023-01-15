@@ -1,4 +1,8 @@
-import {createApp} from 'vue'
-import App from './App.vue'
+import "@/styles/main.scss";
+import App from "@/components/App.vue";
 
-createApp(App).mount('#app')
+const container = document.createElement('div');
+container.id = 'app';
+
+createApp(App).mount(container)
+document.body.appendChild(container);
