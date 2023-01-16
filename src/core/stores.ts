@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import {createDiscreteApi, darkTheme, DropdownOption, lightTheme, useOsTheme} from "naive-ui";
-import {dictFiles, langFiles} from "@/core/shared";
+import {dictCache, dictFiles, langFiles} from "@/core/shared";
 import {availableLangCodes, DictItem} from "@/types/shared";
 import {Parser} from "@/core/parser";
 import {useClipboard} from "@vueuse/core";
@@ -22,7 +22,14 @@ export const useAppStore = defineStore('app', {
             }
         },
         dictItems(state) {
-            return new Parser(dictFiles[state.lang]).items;
+            if (dictCache.has(state.lang)) {
+                return dictCache.get(state.lang)!;
+            }
+
+            const result = new Parser(dictFiles[state.lang]).items;
+            dictCache.set(state.lang, result);
+
+            return result;
         },
         translations(state) {
             return langFiles[state.lang];

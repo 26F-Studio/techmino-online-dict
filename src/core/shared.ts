@@ -1,10 +1,12 @@
-import {availableLangCodes, Translations} from "@/types/shared";
+import {availableLangCodes, DictItem, Translations} from "@/types/shared";
 import dict_en from "../../Game/parts/language/dict_en.lua?raw";
 import dict_ja from "../../Game/parts/language/dict_ja.lua?raw";
 import dict_zh from "../../Game/parts/language/dict_zh.lua?raw";
 import lang_en from "@/langs/en.json";
 import lang_ja from "@/langs/ja.json";
 import lang_zh from "@/langs/zh.json";
+
+export const dictCache = new Map<availableLangCodes, DictItem[]>();
 
 export const dictFiles = {
     en: dict_en,
@@ -18,16 +20,16 @@ export const langFiles = {
     zh: lang_zh
 } as Record<availableLangCodes, Translations>;
 
-export const blockStyle = 'font-[proportional] not-italic text-cyan-500 text-4xl';
+export const blockStyle = 'not-italic text-cyan-500 text-4xl';
 
 export const categoryColors = {
-    help: '#ffff00',
+    help: '#fdba74',
     org: '#fbb741',
     game: '#14a3c7',
     term: '#ff7f7f',
-    setup: '#ffffe0',
+    setup: '#94a3b8',
     pattern: '#bfdfa5',
-    command: '#155084',
-    english: '#0000ff',
+    command: '#0284c7',
+    english: '#2563eb',
     name: '#7a5299'
 } as Record<string, string>

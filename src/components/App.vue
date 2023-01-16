@@ -6,7 +6,7 @@ import {Moon, Sun} from "@vicons/tabler";
 import {EarthFilled} from "@vicons/carbon";
 import {isMobile} from "@/core/utils";
 import {categoryColors} from "@/core/shared";
-import {NPopover} from "naive-ui";
+import {NEl, NPopover, NText} from "naive-ui";
 
 const appStore = useAppStore();
 const sharedStore = useSharedStore();
@@ -46,20 +46,23 @@ function renderTitle(content: string | null) {
     const matches = content?.match(exp);
 
     if (!content || !matches) {
-        return h('span', null, content ?? '?');
+        return h(NText, {
+            class: 'text-current'
+        }, content ?? '?');
     }
 
     const newText = content?.replace(exp, '');
 
-    return h('div', null, [
+    return h(NEl, null, [
         h(NPopover, null, {
-            trigger: () => h('span', {
-                class: 'font-[proportional] not-italic text-xl mr-1',
-                innerHTML: '&#xf0015;'
+            trigger: () => h('i', {
+                class: 'zChan thinking not-italic text-xl mr-1'
             }),
             default: () => matches[0]
         }),
-        h('span', null, newText)
+        h(NText, {
+            class: 'text-current'
+        }, newText)
     ]);
 }
 </script>
@@ -193,8 +196,5 @@ function renderTitle(content: string | null) {
 </template>
 
 <style scoped>
-@font-face {
-    font-family: "proportional";
-    src: url("../fonts/proportional.otf");
-}
+@import '@/styles/char.scss';
 </style>
