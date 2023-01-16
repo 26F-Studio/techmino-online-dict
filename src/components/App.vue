@@ -6,7 +6,7 @@ import {Moon, Sun} from "@vicons/tabler";
 import {EarthFilled} from "@vicons/carbon";
 import {isMobile} from "@/core/utils";
 import {categoryColors} from "@/core/shared";
-import {createDiscreteApi, NPopover} from "naive-ui";
+import {NPopover} from "naive-ui";
 
 const appStore = useAppStore();
 const sharedStore = useSharedStore();
@@ -41,30 +41,31 @@ const items = computed(() => {
     }), 'category');
 });
 
-const DictTitle = defineComponent({
-    props: {
-        content: String
-    },
+const DictTitle = defineComponent<{
+    content?: string | null
+}>({
     setup(props) {
         const exp = /^tetris/ig;
         const matches = props.content?.match(exp);
 
-        if (!matches) {
-            return () => h('span', null, props.content);
-        }
+        return () => {
+            if (!matches) {
+                return h('span', null, props.content ?? '?');
+            }
 
-        const newText = props.content?.replace(exp, '');
+            const newText = props.content?.replace(exp, '');
 
-        return () => h('div', null, [
-            h(NPopover, null, {
-                trigger: () => h('span', {
-                    class: 'font-[proportional] not-italic text-xl mr-1',
-                    innerHTML: '&#xf0015;'
+            return h('div', null, [
+                h(NPopover, null, {
+                    trigger: () => h('span', {
+                        class: 'font-[proportional] not-italic text-xl mr-1',
+                        innerHTML: '&#xf0015;'
+                    }),
+                    default: () => matches[0]
                 }),
-                default: () => matches[0]
-            }),
-            h('span', null, newText)
-        ]);
+                h('span', null, newText)
+            ]);
+        };
     }
 });
 </script>
@@ -118,7 +119,7 @@ const DictTitle = defineComponent({
                             <n-space v-if="!isMobile" justify="center">
                                 <n-button v-for="item in entries" :color="categoryColors[category]" size="small"
                                           @click="sharedStore.setCurrent(item)">
-                                    <DictTitle :content="item.title"/>
+                                    <DictTitle :content="item?.title"/>
                                 </n-button>
                             </n-space>
 
@@ -130,7 +131,7 @@ const DictTitle = defineComponent({
                                         <n-popover>
                                             <template #trigger>
                                                 <n-ellipsis>
-                                                    <DictTitle :content="item.title"/>
+                                                    <DictTitle :content="item?.title"/>
                                                 </n-ellipsis>
                                             </template>
 
