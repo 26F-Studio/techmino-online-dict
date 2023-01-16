@@ -8,11 +8,16 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     App: typeof import('./src/components/App.vue')['default']
+    DictItemList: typeof import('./src/components/Shared/DictItemList.vue')['default']
+    ForDesktop: typeof import('./src/components/Page/ForDesktop.vue')['default']
+    ForMobile: typeof import('./src/components/Page/ForMobile.vue')['default']
+    ItemList: typeof import('./src/components/Utils/ItemList.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDivider: typeof import('naive-ui')['NDivider']
     NDropdown: typeof import('naive-ui')['NDropdown']
     NEl: typeof import('naive-ui')['NEl']
+    NEllipsis: typeof import('naive-ui')['NEllipsis']
     NEmpty: typeof import('naive-ui')['NEmpty']
     NGrid: typeof import('naive-ui')['NGrid']
     NGridItem: typeof import('naive-ui')['NGridItem']
@@ -30,5 +35,6 @@ declare module '@vue/runtime-core' {
     NListItem: typeof import('naive-ui')['NListItem']
     NSpace: typeof import('naive-ui')['NSpace']
     NText: typeof import('naive-ui')['NText']
+    Viewer: typeof import('./src/components/Shared/Viewer.vue')['default']
   }
 }
