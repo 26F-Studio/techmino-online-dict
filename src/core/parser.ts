@@ -2,41 +2,42 @@ import {Expression, parse as parseLua, Statement} from "luaparse";
 import {preg_replace_callback} from "@/core/utils";
 import {AvailableParserVariableType, DictItem, ParserExpressionOptions} from "@/types/shared";
 import {get} from "lodash-es";
+import {blockStyle} from "@/core/shared";
 
 export class Parser {
     protected variables = {
         FNNS: false,
         CHAR: {
             mino: {
-                Z: '<i class="font-[proportional] block-f0040"></i>',
-                S: '<i class="font-[proportional] block-f0041"></i>',
-                J: '<i class="font-[proportional] block-f0042"></i>',
-                L: '<i class="font-[proportional] block-f0043"></i>',
-                T: '<i class="font-[proportional] block-f0044"></i>',
-                O: '<i class="font-[proportional] block-f0045"></i>',
-                I: '<i class="font-[proportional] block-f0046"></i>',
-                Z5: '<i class="font-[proportional] block-f0047"></i>',
-                S5: '<i class="font-[proportional] block-f0048"></i>',
-                P: '<i class="font-[proportional] block-f0049"></i>',
-                Q: '<i class="font-[proportional] block-f004a"></i>',
-                F: '<i class="font-[proportional] block-f004b"></i>',
-                E: '<i class="font-[proportional] block-f004c"></i>',
-                T5: '<i class="font-[proportional] block-f004d"></i>',
-                U: '<i class="font-[proportional] block-f004e"></i>',
-                V: '<i class="font-[proportional] block-f004f"></i>',
-                W: '<i class="font-[proportional] block-f0050"></i>',
-                X: '<i class="font-[proportional] block-f0051"></i>',
-                J5: '<i class="font-[proportional] block-f0052"></i>',
-                L5: '<i class="font-[proportional] block-f0053"></i>',
-                R: '<i class="font-[proportional] block-f0054"></i>',
-                Y: '<i class="font-[proportional] block-f0055"></i>',
-                N: '<i class="font-[proportional] block-f0056"></i>',
-                H: '<i class="font-[proportional] block-f0057"></i>',
-                I5: '<i class="font-[proportional] block-f0058"></i>',
-                I3: '<i class="font-[proportional] block-f0059"></i>',
-                C: '<i class="font-[proportional] block-f005a"></i>',
-                I2: '<i class="font-[proportional] block-f005b"></i>',
-                O1: '<i class="font-[proportional] block-f005c"></i>'
+                Z: `<i class="${blockStyle}">&#xf0040;</i>`,
+                S: `<i class="${blockStyle}">&#xf0041;</i>`,
+                J: `<i class="${blockStyle}">&#xf0042;</i>`,
+                L: `<i class="${blockStyle}">&#xf0043;</i>`,
+                T: `<i class="${blockStyle}">&#xf0044;</i>`,
+                O: `<i class="${blockStyle}">&#xf0045;</i>`,
+                I: `<i class="${blockStyle}">&#xf0046;</i>`,
+                Z5: `<i class="${blockStyle}">&#xf0047;</i>`,
+                S5: `<i class="${blockStyle}">&#xf0048;</i>`,
+                P: `<i class="${blockStyle}">&#xf0049;</i>`,
+                Q: `<i class="${blockStyle}">&#xf004a;</i>`,
+                F: `<i class="${blockStyle}">&#xf004b;</i>`,
+                E: `<i class="${blockStyle}">&#xf004c;</i>`,
+                T5: `<i class="${blockStyle}">&#xf004d;</i>`,
+                U: `<i class="${blockStyle}">&#xf004e;</i>`,
+                V: `<i class="${blockStyle}">&#xf004f;</i>`,
+                W: `<i class="${blockStyle}">&#xf0050;</i>`,
+                X: `<i class="${blockStyle}">&#xf0051;</i>`,
+                J5: `<i class="${blockStyle}">&#xf0052;</i>`,
+                L5: `<i class="${blockStyle}">&#xf0053;</i>`,
+                R: `<i class="${blockStyle}">&#xf0054;</i>`,
+                Y: `<i class="${blockStyle}">&#xf0055;</i>`,
+                N: `<i class="${blockStyle}">&#xf0056;</i>`,
+                H: `<i class="${blockStyle}">&#xf0057;</i>`,
+                I5: `<i class="${blockStyle}">&#xf0058;</i>`,
+                I3: `<i class="${blockStyle}">&#xf0059;</i>`,
+                C: `<i class="${blockStyle}">&#xf005a;</i>`,
+                I2: `<i class="${blockStyle}">&#xf005b;</i>`,
+                O1: `<i class="${blockStyle}">&#xf005c;</i>`
             }
         }
     } as Record<string, AvailableParserVariableType>;

@@ -1,5 +1,8 @@
 {
     "title": "Techmino Online Dictionary",
     "search": "Search",
-    "tags": "Tags"
+    "tags": "Tags",
+    "copy_from": "Copy from",
+    "error": "Error",
+    "copied": "Copied!"
 }

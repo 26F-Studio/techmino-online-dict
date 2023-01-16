@@ -1,5 +1,8 @@
 {
     "title": "Techmino 在线词典",
     "search": "搜点什么",
-    "tags": "标签"
+    "tags": "标签",
+    "copy_from": "复制于",
+    "error": "出错了",
+    "copied": "复制成功!"
 }

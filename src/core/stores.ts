@@ -1,8 +1,9 @@
 import {defineStore} from "pinia";
-import {darkTheme, DropdownOption, lightTheme, useOsTheme} from "naive-ui";
+import {createDiscreteApi, darkTheme, DropdownOption, lightTheme, useOsTheme} from "naive-ui";
 import {dictFiles, langFiles} from "@/core/shared";
 import {availableLangCodes, DictItem} from "@/types/shared";
 import {Parser} from "@/core/parser";
+import {useClipboard} from "@vueuse/core";
 
 export const useAppStore = defineStore('app', {
     state: () => ({
@@ -51,7 +52,10 @@ export const useAppStore = defineStore('app', {
             this.theme = this.theme === 'light' ? 'dark' : 'light';
         },
         handleLangUpdate(code: availableLangCodes) {
+            const sharedStore = useSharedStore();
+
             this.lang = code;
+            sharedStore.removeCurrent();
         }
     },
     persist: {
@@ -79,6 +83,53 @@ export const useSharedStore = defineStore('shared', {
         },
         removeCurrent() {
             this.current = undefined;
+        },
+        async copyCurrentDict() {
+            const appStore = useAppStore();
+
+            const {message, unmount} = createDiscreteApi(['message'], {
+                configProviderProps: {
+                    theme: appStore.themeRef
+                }
+            });
+
+            if (!this.current) {
+                message.error('?', {
+                    onAfterLeave() {
+                        unmount();
+                    }
+                });
+
+                return;
+            }
+
+            const {copy, isSupported} = useClipboard({
+                source: [
+                    this.current?.title,
+                    '',
+                    this.current?.content,
+                    '',
+                    `==${appStore.translations['copy_from']}: ${appStore.translations['title']}==`
+                ].join('\r\n'),
+                legacy: true
+            });
+
+            if (!isSupported) {
+                message.error(appStore.translations['error'], {
+                    onAfterLeave() {
+                        unmount();
+                    }
+                });
+
+                return;
+            }
+
+            await copy();
+            message.success(appStore.translations['copied'], {
+                onAfterLeave() {
+                    unmount();
+                }
+            });
         }
     }
 });

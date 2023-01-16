@@ -17,3 +17,17 @@ export const langFiles = {
     ja: lang_ja,
     zh: lang_zh
 } as Record<availableLangCodes, Translations>;
+
+export const blockStyle = 'font-[proportional] not-italic text-cyan-500 text-4xl';
+
+export const categoryColors = {
+    help: '#ffff00',
+    org: '#fbb741',
+    game: '#14a3c7',
+    term: '#ff7f7f',
+    setup: '#ffffe0',
+    pattern: '#bfdfa5',
+    command: '#155084',
+    english: '#0000ff',
+    name: '#7a5299'
+} as Record<string, string>

@@ -10,6 +10,9 @@ export interface Translations {
     title: string;
     search: string;
     tags: string;
+    copy_from: string;
+    error: string;
+    copied: string;
 }
 
 export interface DictItem {
