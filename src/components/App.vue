@@ -41,33 +41,27 @@ const items = computed(() => {
     }), 'category');
 });
 
-const DictTitle = defineComponent<{
-    content?: string | null
-}>({
-    setup(props) {
-        const exp = /^tetris/ig;
-        const matches = props.content?.match(exp);
+function renderTitle(content: string | null) {
+    const exp = /^tetris/ig;
+    const matches = content?.match(exp);
 
-        return () => {
-            if (!matches) {
-                return h('span', null, props.content ?? '?');
-            }
-
-            const newText = props.content?.replace(exp, '');
-
-            return h('div', null, [
-                h(NPopover, null, {
-                    trigger: () => h('span', {
-                        class: 'font-[proportional] not-italic text-xl mr-1',
-                        innerHTML: '&#xf0015;'
-                    }),
-                    default: () => matches[0]
-                }),
-                h('span', null, newText)
-            ]);
-        };
+    if (!content || !matches) {
+        return h('span', null, content ?? '?');
     }
-});
+
+    const newText = content?.replace(exp, '');
+
+    return h('div', null, [
+        h(NPopover, null, {
+            trigger: () => h('span', {
+                class: 'font-[proportional] not-italic text-xl mr-1',
+                innerHTML: '&#xf0015;'
+            }),
+            default: () => matches[0]
+        }),
+        h('span', null, newText)
+    ]);
+}
 </script>
 
 <template>
@@ -119,7 +113,7 @@ const DictTitle = defineComponent<{
                             <n-space v-if="!isMobile" justify="center">
                                 <n-button v-for="item in entries" :color="categoryColors[category]" size="small"
                                           @click="sharedStore.setCurrent(item)">
-                                    <DictTitle :content="item?.title"/>
+                                    <Component :is="renderTitle(item.title)"/>
                                 </n-button>
                             </n-space>
 
@@ -131,7 +125,7 @@ const DictTitle = defineComponent<{
                                         <n-popover>
                                             <template #trigger>
                                                 <n-ellipsis>
-                                                    <DictTitle :content="item?.title"/>
+                                                    <Component :is="renderTitle(item.title)"/>
                                                 </n-ellipsis>
                                             </template>
 
@@ -146,7 +140,7 @@ const DictTitle = defineComponent<{
                     <n-el v-else class="sm:w-1/3 mx-auto">
                         <n-space vertical>
                             <n-h2>
-                                <DictTitle :content="sharedStore.current?.title"/>
+                                <Component :is="renderTitle(sharedStore.current?.title ?? null)"/>
                             </n-h2>
 
                             <n-text class="whitespace-pre-wrap" v-html="sharedStore.current?.content"/>
