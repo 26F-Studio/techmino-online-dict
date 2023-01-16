@@ -46,7 +46,7 @@ const items = computed(() => {
     <n-config-provider :theme="appStore.themeRef" class="h-full">
         <n-layout class="h-full">
             <n-layout-content class="pb-16 h-full mx-2">
-                <n-space justify="space-between" class="mt-2">
+                <n-space class="mt-2" justify="space-between">
                     <n-button @click="appStore.switchTheme">
                         <template #icon>
                             <n-icon :component="appStore.theme === 'light' ? Moon : Sun"/>
@@ -79,14 +79,14 @@ const items = computed(() => {
                 </n-space>
 
                 <n-space size="large" vertical>
-                    <n-space vertical v-if="!sharedStore.showing">
+                    <n-space v-if="!sharedStore.showing" vertical>
                         <!-- 手机的条目显示 -->
 
-                        <n-space v-for="(items, category) in items" v-if="isMobile" class="text-center" vertical>
+                        <n-space v-for="(entries, category) in items" v-if="isMobile" class="text-center" vertical>
                             <n-text class="font-bold text-2xl" type="info">{{ category }}</n-text>
 
                             <n-grid :cols="3" :x-gap="10" :y-gap="10" class="text-center">
-                                <n-grid-item v-for="item in items">
+                                <n-grid-item v-for="item in entries">
                                     <n-button class="w-full" @click="sharedStore.setCurrent(item)">
                                         <n-ellipsis>{{ item.title }}</n-ellipsis>
                                     </n-button>
@@ -96,11 +96,11 @@ const items = computed(() => {
 
                         <!-- 电脑的条目显示 -->
 
-                        <n-space v-for="(items, category) in items" v-else class="text-center" vertical>
+                        <n-space v-for="(entries, category) in items" v-else class="text-center" vertical>
                             <n-text class="font-bold text-2xl" type="info">{{ category }}</n-text>
 
                             <n-space justify="center">
-                                <n-button v-for="item in items" size="small" @click="sharedStore.setCurrent(item)">
+                                <n-button v-for="item in entries" size="small" @click="sharedStore.setCurrent(item)">
                                     {{ item.title }}
                                 </n-button>
                             </n-space>
@@ -109,20 +109,20 @@ const items = computed(() => {
 
                     <n-el v-else class="sm:w-1/3 mx-auto">
                         <n-space vertical>
-                            <n-h2>{{ sharedStore.current.title }}</n-h2>
-                            <n-text v-html="sharedStore.current.content"/>
+                            <n-h2>{{ sharedStore.current?.title }}</n-h2>
+                            <n-text v-html="sharedStore.current?.content"/>
 
                             <n-space class="mt-10 items-end" justify="space-between">
                                 <n-space size="small">
                                     <n-text>{{ appStore.translations.tags }}:&nbsp;</n-text>
 
-                                    <n-button v-for="tag in sharedStore.current.tags" text type="info"
+                                    <n-button v-for="tag in sharedStore.current?.tags" text type="info"
                                               @click="sharedStore.setSearch(tag)">
                                         {{ tag }}
                                     </n-button>
                                 </n-space>
 
-                                <n-button v-if="sharedStore.current.link" :href="sharedStore.current.link" tag="a">
+                                <n-button v-if="sharedStore.current?.link" :href="sharedStore.current?.link" tag="a">
                                     <template #icon>
                                         <n-icon :component="EarthFilled"/>
                                     </template>
