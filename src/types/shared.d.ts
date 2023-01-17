@@ -4,6 +4,7 @@ export type AvailableParserVariableType = string | number | boolean | object;
 export interface ParserExpressionOptions {
     forceReturnVariableName?: boolean;
     rawAddQuote?: boolean;
+    executeIdentifierFunction?: boolean;
 }
 
 export interface Translations {

@@ -1,45 +1,13 @@
 import {Expression, parse as parseLua, Statement} from "luaparse";
 import {preg_replace_callback} from "@/core/utils";
 import {AvailableParserVariableType, DictItem, ParserExpressionOptions} from "@/types/shared";
-import {get} from "lodash-es";
-import {blockStyle} from "@/core/shared";
+import {get, has} from "lodash-es";
+import {chars} from "@/core/char";
 
 export class Parser {
     protected variables = {
-        FNNS: false,
-        CHAR: {
-            mino: {
-                Z: `<i class="${blockStyle} mino Z"></i>`,
-                S: `<i class="${blockStyle} mino S"></i>`,
-                J: `<i class="${blockStyle} mino J"></i>`,
-                L: `<i class="${blockStyle} mino L"></i>`,
-                T: `<i class="${blockStyle} mino T"></i>`,
-                O: `<i class="${blockStyle} mino O"></i>`,
-                I: `<i class="${blockStyle} mino I"></i>`,
-                Z5: `<i class="${blockStyle} mino Z5"></i>`,
-                S5: `<i class="${blockStyle} mino S5"></i>`,
-                P: `<i class="${blockStyle} mino P"></i>`,
-                Q: `<i class="${blockStyle} mino Q"></i>`,
-                F: `<i class="${blockStyle} mino F"></i>`,
-                E: `<i class="${blockStyle} mino E"></i>`,
-                T5: `<i class="${blockStyle} mino T5"></i>`,
-                U: `<i class="${blockStyle} mino U"></i>`,
-                V: `<i class="${blockStyle} mino V"></i>`,
-                W: `<i class="${blockStyle} mino W"></i>`,
-                X: `<i class="${blockStyle} mino X"></i>`,
-                J5: `<i class="${blockStyle} mino J5"></i>`,
-                L5: `<i class="${blockStyle} mino L5"></i>`,
-                R: `<i class="${blockStyle} mino R"></i>`,
-                Y: `<i class="${blockStyle} mino Y"></i>`,
-                N: `<i class="${blockStyle} mino N"></i>`,
-                H: `<i class="${blockStyle} mino H"></i>`,
-                I5: `<i class="${blockStyle} mino I5"></i>`,
-                I3: `<i class="${blockStyle} mino I3"></i>`,
-                C: `<i class="${blockStyle} mino C"></i>`,
-                I2: `<i class="${blockStyle} mino I2"></i>`,
-                O1: `<i class="${blockStyle} mino O1"></i>`
-            }
-        }
+        CHAR: chars,
+        FNNS: false
     } as Record<string, AvailableParserVariableType>;
 
     constructor(protected code: string) {
@@ -72,7 +40,15 @@ export class Parser {
             return null;
         }
 
-        let result = preg_replace_callback(v.slice(1, -1), /\\(\d+)/g, m => {
+        if (v.startsWith('"')) {
+            v = v.slice(1);
+        }
+
+        if (v.endsWith('"')) {
+            v = v.slice(0, -1);
+        }
+
+        let result = preg_replace_callback(v, /\\(\d+)/g, m => {
             return String.fromCharCode(parseInt(m[1]));
         });
 
@@ -106,6 +82,23 @@ export class Parser {
                 break;
             default:
                 throw new Error(`Unknown statement: ${statement.type}`);
+        }
+    }
+
+    protected processVariable(name: string, executeFunction = true) {
+        if (!has(this.variables, name)) {
+            return name;
+        }
+
+        const content = get(this.variables, name);
+
+        switch (typeof content) {
+            case 'object':
+                return name;
+            case 'function':
+                return content();
+            default:
+                return content;
         }
     }
 
@@ -151,14 +144,7 @@ export class Parser {
                     forceReturnVariableName: true
                 }) as string);
 
-                const variableName = temp.flat().join('');
-                const content = get(that.variables, variableName);
-
-                if (typeof content !== 'string') {
-                    return variableName;
-                }
-
-                return content;
+                return this.processVariable(temp.flat().join(''), options.executeIdentifierFunction);
             case 'LogicalExpression':
                 temp.push(that.processExpression(expression.left) as string);
 
@@ -174,13 +160,15 @@ export class Parser {
                 }
 
                 temp.push(that.processExpression(expression.right) as string);
-                return temp.join(' ');
+
+                const code = temp.join(' ');
+                return eval('() => ' + code)();
             case 'Identifier':
-                if (!that.variables[expression.name] || options.forceReturnVariableName) {
+                if (!has(that.variables, expression.name) || options.forceReturnVariableName) {
                     return expression.name;
                 }
 
-                return that.variables[expression.name];
+                return this.processVariable(expression.name, options.executeIdentifierFunction);
             case 'StringLiteral':
                 return that.processRaw(expression.raw, options.rawAddQuote ?? true)!;
             default:

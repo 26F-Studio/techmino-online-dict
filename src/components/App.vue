@@ -7,9 +7,12 @@ import {EarthFilled} from "@vicons/carbon";
 import {isMobile} from "@/core/utils";
 import {categoryColors} from "@/core/shared";
 import {NEl, NPopover, NText} from "naive-ui";
+import {refDebounced} from "@vueuse/core";
 
 const appStore = useAppStore();
 const sharedStore = useSharedStore();
+
+const search = refDebounced(toRef(sharedStore, 'search'), 500);
 
 const items = computed(() => {
     return groupBy(appStore.dictItems.map(item => {
@@ -20,7 +23,7 @@ const items = computed(() => {
         }
         return item;
     }).filter(item => {
-        if (!sharedStore.search) {
+        if (!search.value) {
             return true;
         }
 
@@ -28,14 +31,14 @@ const items = computed(() => {
             !!item.title
                     ?.toLowerCase()
                     .match(
-                            sharedStore.search?.toLowerCase()
+                            search.value?.toLowerCase()
                     ),
             !!item.tags
                     ?.map(tag => {
                         return tag.toLowerCase();
                     })
                     .includes(
-                            sharedStore.search?.toLowerCase()
+                            search.value?.toLowerCase()
                     )
         ].includes(true);
     }), 'category');
@@ -48,12 +51,12 @@ function renderTitle(content: string | null) {
     if (!content || !matches) {
         return h(NText, {
             class: 'text-current'
-        }, content ?? '?');
+        }, () => content ?? '?');
     }
 
     const newText = content?.replace(exp, '');
 
-    return h(NEl, null, [
+    return h(NEl, null, () => [
         h(NPopover, null, {
             trigger: () => h('i', {
                 class: 'zChan thinking not-italic text-xl mr-1'
@@ -62,7 +65,7 @@ function renderTitle(content: string | null) {
         }),
         h(NText, {
             class: 'text-current'
-        }, newText)
+        }, () => newText)
     ]);
 }
 </script>
@@ -92,6 +95,7 @@ function renderTitle(content: string | null) {
                     <n-el class="text-center">
                         <n-h1>{{ appStore.translations.title }}</n-h1>
                         <n-input v-if="!sharedStore.showing" v-model:value="sharedStore.search"
+                                 :loading="search !== sharedStore.search"
                                  :placeholder="appStore.translations.search"
                                  clearable/>
 
@@ -147,6 +151,7 @@ function renderTitle(content: string | null) {
                             </n-h2>
 
                             <n-text class="whitespace-pre-wrap" v-html="sharedStore.current?.content"/>
+
                             <n-space class="mt-10 items-end" justify="space-between">
                                 <n-space size="small">
                                     <n-text>{{ appStore.translations.tags }}:&nbsp;</n-text>
@@ -194,7 +199,3 @@ function renderTitle(content: string | null) {
         </n-layout>
     </n-config-provider>
 </template>
-
-<style scoped>
-@import '@/styles/char.scss';
-</style>
