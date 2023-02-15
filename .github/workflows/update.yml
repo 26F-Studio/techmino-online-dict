@@ -1,4 +1,4 @@
-name: Auto update
+name: submodule updater
 
 on:
   repository_dispatch:
@@ -12,9 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with: 
-          repository: org/parent_repository
-          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+        with:
           submodules: true
 
       - name: Pull & update submodules recursively
