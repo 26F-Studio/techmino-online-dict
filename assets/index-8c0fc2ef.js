@@ -2637,17 +2637,23 @@ return {
         "Stacking TST(s) on top of a STSD."..HDwiki,
         HDsearch.."King_Crimson",
     },
-    {"Consecutive PCs (1/2)",
+    {"Consecutive PCs (1/3)",
         "pcloop",
         "pattern",
         "You can find detailed guides on “Tetris Hall” about 1st–4th and 7th PC. After you finish the 7th PC, exactly 70 blocks are used so you can go back to the 1st PC.",
         "https://shiwehi.com/tetris/template/consecutivepc.php",
     },
-    {"Consecutive PCs (2/2)",
+    {"Consecutive PCs (2/3)",
         "pcloop",
         "pattern",
         "four.lol has guides on 5th and 6th PC.",
         "https://four.lol/perfect-clears/5th",
+    },
+    {"Consecutive PCs (3/3)",
+        "pcloop",
+        "pattern",
+        "A complete PC-loop tutorial written by NitenTeria",
+        "https://docs.qq.com/sheet/DRmxvWmt3SWxwS2tV",
     },
 
     -- Savedata managing
@@ -4023,7 +4029,7 @@ return {
     {"連パフェ(3/3)",
         "pcloop パフェ ループ 連",
         "pattern",
-        "ナイテン(Nitenteria)によって作成された連パフェについての情報がまとめられているドキュメント\\nただし情報量の多さ等から自分である程度吟味する必要がある",
+        "ナイテン(NitenTeria)によって作成された連パフェについての情報がまとめられているドキュメント\\nただし情報量の多さ等から自分である程度吟味する必要がある",
         "https://docs.qq.com/sheet/DRmxvWmt3SWxwS2tV",
     },
 
@@ -5274,7 +5280,7 @@ return {
         "lianxuquanxiao lianxupc pcloop",
         "pattern",
         "研究群群友加加编写的一份连续PC教程",
-        "https://docs.qq.com/sheet/DRmxvWmt3SWxwS2tV"
+        "https://docs.qq.com/sheet/DRmxvWmt3SWxwS2tV",
     },
 
     -- 存档管理
