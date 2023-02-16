@@ -3,7 +3,8 @@ import {createDiscreteApi, darkTheme, DropdownOption, lightTheme, useOsTheme} fr
 import {dictCache, dictFiles, langFiles} from "@/core/shared";
 import {availableLangCodes, DictItem} from "@/types/shared";
 import {Parser} from "@/core/parser";
-import {useClipboard} from "@vueuse/core";
+import {Base64} from "js-base64";
+import {copy} from "@/core/utils";
 
 export const useAppStore = defineStore('app', {
     state: () => ({
@@ -91,7 +92,7 @@ export const useSharedStore = defineStore('shared', {
         removeCurrent() {
             this.current = undefined;
         },
-        async copyCurrentDict() {
+        _checkCurrent() {
             const appStore = useAppStore();
 
             const {message, unmount} = createDiscreteApi(['message'], {
@@ -109,34 +110,33 @@ export const useSharedStore = defineStore('shared', {
 
                 return;
             }
+        },
+        async shareCurrentDict() {
+            const appStore = useAppStore();
+            this._checkCurrent();
 
-            const {copy, isSupported} = useClipboard({
-                source: [
-                    this.current?.title,
-                    '',
-                    this.current?.content,
-                    '',
-                    `==${appStore.translations['copy_from']}: ${appStore.translations['title']}==`
-                ].join('\r\n'),
-                legacy: true
-            });
+            await copy(
+                    new URL('/', location.href) + '#' + Base64.encode(
+                            JSON.stringify({
+                                locale: appStore.lang,
+                                title: encodeURIComponent(this.current!.title ?? "?")
+                            })
+                    )
+            );
+        },
+        async copyCurrentDict() {
+            const appStore = useAppStore();
+            this._checkCurrent();
 
-            if (!isSupported) {
-                message.error(appStore.translations['error'], {
-                    onAfterLeave() {
-                        unmount();
-                    }
-                });
-
-                return;
-            }
-
-            await copy();
-            message.success(appStore.translations['copied'], {
-                onAfterLeave() {
-                    unmount();
-                }
-            });
+            await copy(
+                    [
+                        this.current?.title,
+                        '',
+                        this.current?.content,
+                        '',
+                        `${appStore.translations['copy_from']}: ${appStore.translations['title']}`
+                    ].join('\r\n')
+            );
         }
     }
 });

@@ -1,3 +1,8 @@
+import {createDiscreteApi} from "naive-ui";
+import {useClipboard} from "@vueuse/core";
+import {useAppStore} from "@/core/stores";
+import {pinia} from "@/core/client";
+
 export const isMobile = (() => {
     const reference = ref();
 
@@ -20,4 +25,35 @@ export function preg_replace_callback<T extends string>(v: T, p: RegExp, cb: (m:
     });
 
     return v;
+}
+
+export async function copy(source: string) {
+    const appStore = useAppStore(pinia);
+
+    const {message, unmount} = createDiscreteApi(['message'], {
+        configProviderProps: {
+            theme: appStore.themeRef
+        }
+    });
+
+    const {copy, isSupported} = useClipboard({
+        source, legacy: true
+    });
+
+    if (!isSupported) {
+        message.error(appStore.translations['error'], {
+            onAfterLeave() {
+                unmount();
+            }
+        });
+
+        return;
+    }
+
+    await copy();
+    message.success(appStore.translations['copied'], {
+        onAfterLeave() {
+            unmount();
+        }
+    });
 }

@@ -1,16 +1,40 @@
 <script lang="ts" setup>
 import {useAppStore, useSharedStore} from "@/core/stores";
 import {groupBy} from "lodash-es";
-import {ContentCopyTwotone, LanguageTwotone} from "@vicons/material";
+import {ContentCopyTwotone, LanguageTwotone, ShareTwotone} from "@vicons/material";
 import {Moon, Sun} from "@vicons/tabler";
 import {EarthFilled} from "@vicons/carbon";
 import {isMobile} from "@/core/utils";
 import {categoryColors} from "@/core/shared";
 import {NEl, NPopover, NText} from "naive-ui";
 import {refDebounced} from "@vueuse/core";
+import {Base64} from "js-base64";
 
 const appStore = useAppStore();
 const sharedStore = useSharedStore();
+
+if (location.hash.length > 1) {
+    const text = location.hash.slice(1);
+
+    try {
+        const item = JSON.parse(Base64.decode(text));
+
+        if ('locale' in item && 'title' in item) {
+            if (['zh', 'en', 'ja'].includes(item.locale)) {
+                appStore.handleLangUpdate(item.locale);
+            }
+
+            const title = decodeURIComponent(item.title);
+            const result = appStore.dictItems.find(v => title === v.title);
+
+            if (result) {
+                sharedStore.setCurrent(result);
+            }
+        }
+    } catch (e) {
+
+    }
+}
 
 const search = refDebounced(toRef(sharedStore, 'search'), 500);
 
@@ -173,6 +197,12 @@ function renderTitle(content: string | null) {
                                     <n-button @click="sharedStore.copyCurrentDict">
                                         <template #icon>
                                             <n-icon :component="ContentCopyTwotone"/>
+                                        </template>
+                                    </n-button>
+
+                                    <n-button @click="sharedStore.shareCurrentDict">
+                                        <template #icon>
+                                            <n-icon :component="ShareTwotone"/>
                                         </template>
                                     </n-button>
                                 </n-space>
