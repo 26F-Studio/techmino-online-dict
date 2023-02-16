@@ -116,7 +116,7 @@ export const useSharedStore = defineStore('shared', {
             this._checkCurrent();
 
             await copy(
-                    new URL('/', location.href) + '#' + Base64.encode(
+                    new URL('', location.href) + '#' + Base64.encode(
                             JSON.stringify({
                                 locale: appStore.lang,
                                 title: encodeURIComponent(this.current!.title ?? "?")
