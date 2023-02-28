@@ -1,19 +1,21 @@
-export type availableLangCodes = 'en' | 'ja' | 'zh';
-export type AvailableParserVariableType = string | number | boolean | object;
+export type AvailableLangCodes = 'en' | 'ja' | 'zh';
 
 export interface ParserExpressionOptions {
     forceReturnVariableName?: boolean;
     rawAddQuote?: boolean;
-    executeIdentifierFunction?: boolean;
 }
 
 export interface Translations {
+    _code: string;
+    _name: string;
+
     title: string;
     search: string;
     tags: string;
     copy_from: string;
     error: string;
     copied: string;
+    maker: string;
 }
 
 export interface DictItem {

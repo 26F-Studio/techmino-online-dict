@@ -1,8 +1,12 @@
 {
+    "_code": "en",
+    "_name": "English",
+
     "title": "Techmino Online Dictionary",
     "search": "Search",
     "tags": "Tags",
     "copy_from": "Copy from",
     "error": "Error",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "maker": "Made by"
 }

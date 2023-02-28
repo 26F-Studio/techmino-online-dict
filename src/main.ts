@@ -1,13 +1,16 @@
 import "@/styles/main.scss";
-import {container, instance, pinia} from "@/core/client";
 import persist from "pinia-plugin-persist";
+import App from "@/components/App.vue";
+import {createPinia} from "pinia";
 
 window.addEventListener('load', () => {
-    container.id = 'app';
+    const app = createApp({
+        render: () => h(App)
+    });
 
+    const pinia = createPinia();
     pinia.use(persist);
-    instance.use(pinia);
-    instance.mount(container);
 
-    document.body.appendChild(container);
+    app.use(pinia);
+    app.mount('#app');
 });

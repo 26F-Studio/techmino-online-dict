@@ -1,8 +1,12 @@
 {
+    "_code": "zh",
+    "_name": "中文",
+
     "title": "Techmino 在线词典",
     "search": "搜点什么",
     "tags": "标签",
     "copy_from": "复制于",
     "error": "出错了",
-    "copied": "复制成功!"
+    "copied": "复制成功!",
+    "maker": "制作者"
 }
