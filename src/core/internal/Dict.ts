@@ -1,7 +1,9 @@
 import {NEl, NPopover, NText} from "naive-ui";
 import {copy} from "@/core/utils";
-import {currentLang, translations} from "@/core/helper/locale";
+import {currentLang, dicts, translations} from "@/core/helper/locale";
 import {Base64} from "js-base64";
+import {languages} from "@/core/shared";
+import api from "@/core/api";
 
 export default class Dict {
     constructor(
@@ -12,6 +14,25 @@ export default class Dict {
             public link: string | null
     ) {
 
+    }
+
+    static get resolve() {
+        if (location.hash.length > 1) {
+            try {
+                const text = location.hash.slice(1);
+                const item = JSON.parse(Base64.decode(text));
+
+                if ('language' in item && 'title' in item) {
+                    if (languages.includes(item.language)) {
+                        currentLang.value = item.language;
+                    }
+
+                    return dicts.value.find(dict => decodeURIComponent(item.title) === dict.title);
+                }
+            } catch (e) {
+                api.$message.error(translations.value.error);
+            }
+        }
     }
 
     get content() {

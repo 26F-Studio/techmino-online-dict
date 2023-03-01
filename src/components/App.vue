@@ -6,20 +6,17 @@ import {EarthFilled} from "@vicons/carbon";
 import {categoryColors, isMobile} from "@/core/shared";
 import {NEl, NPopover, NText} from "naive-ui";
 import {result, search} from "@/core/helper/filter";
-import {currentLang, languageSelectOptions, translations} from "@/core/helper/locale";
-import {tryResolveDictFromHash} from "@/core/helper/resolver";
+import {languageSelectOptions, setLanguage, translations} from "@/core/helper/locale";
 import ApiInjector from "@/components/ApiInjector.vue";
-import {AvailableLangCodes} from "@/types/shared";
-
-const current = ref(
-        tryResolveDictFromHash()
-);
-
-function updateLanguage(newLanguage: AvailableLangCodes) {
-    currentLang.value = newLanguage;
-}
+import Dict from "@/core/internal/Dict";
 
 const appStore = useAppStore();
+const current = ref(Dict.resolve);
+
+function backAndSearch(value: string) {
+    search.value = value;
+    current.value = undefined;
+}
 </script>
 
 <template>
@@ -46,7 +43,7 @@ const appStore = useAppStore();
                                     <!-- 切换语言 -->
 
                                     <n-dropdown :options="languageSelectOptions" animated trigger="click"
-                                                @select="updateLanguage">
+                                                @select="setLanguage">
                                         <n-button>
                                             <template #icon>
                                                 <n-icon :component="LanguageTwotone"/>
@@ -132,7 +129,7 @@ const appStore = useAppStore();
                                                     <n-text>{{ translations.tags }}:&nbsp;</n-text>
 
                                                     <n-button v-for="tag in current.tags" text type="info"
-                                                              @click="search = tag">
+                                                              @click="backAndSearch(tag)">
                                                         {{ tag }}
                                                     </n-button>
                                                 </n-space>

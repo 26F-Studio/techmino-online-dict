@@ -14,6 +14,9 @@ const _key = 'language';
 
 const language = ref(localStorage.getItem(_key) as AvailableLangCodes);
 
+export function setLanguage(newLanguage: AvailableLangCodes) {
+    currentLang.value = newLanguage;
+}
 export const currentLang = computed<AvailableLangCodes>({
     get() {
         if (!language.value || !languages.includes(language.value)) {
