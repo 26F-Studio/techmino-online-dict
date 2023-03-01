@@ -5,21 +5,21 @@ import {get, has} from "lodash-es";
 import Dict from "@/core/internal/Dict";
 
 export default class Parser {
-    protected variables = {
+    protected variables: Record<string, unknown> = {
         CHAR: {
             mino: (() => {
-                const _ = {} as Record<string, string>;
+                const temp: Record<string, string> = {};
 
                 ['Z', 'S', 'J', 'L', 'T', 'O', 'I', 'Z5', 'S5', 'P', 'Q', 'F', 'E', 'T5', 'U', 'V', 'W', 'X', 'J5', 'L5', 'R', 'Y', 'N', 'H', 'I5', 'I3', 'C', 'I2', 'O1']
                         .forEach(piece => {
-                            _[piece] = `<i class="not-italic text-cyan-500 text-4xl mino ${piece}"></i>`;
+                            temp[piece] = `<i class="not-italic text-cyan-500 text-4xl mino ${piece}"></i>`;
                         });
 
-                return _;
+                return temp;
             })()
         },
         FNNS: /OS/i.test(navigator.userAgent) // 判断 User-Agent 是否包含 "OS"
-    } as Record<string, unknown>;
+    };
 
     constructor(protected code: string) {
 

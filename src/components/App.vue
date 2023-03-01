@@ -9,10 +9,15 @@ import {result, search} from "@/core/helper/filter";
 import {currentLang, languageSelectOptions, translations} from "@/core/helper/locale";
 import {tryResolveDictFromHash} from "@/core/helper/resolver";
 import ApiInjector from "@/components/ApiInjector.vue";
+import {AvailableLangCodes} from "@/types/shared";
 
 const current = ref(
         tryResolveDictFromHash()
 );
+
+function updateLanguage(newLanguage: AvailableLangCodes) {
+    currentLang.value = newLanguage;
+}
 
 const appStore = useAppStore();
 </script>
@@ -41,7 +46,7 @@ const appStore = useAppStore();
                                     <!-- 切换语言 -->
 
                                     <n-dropdown :options="languageSelectOptions" animated trigger="click"
-                                                @select="_ => currentLang.value = _">
+                                                @select="updateLanguage">
                                         <n-button>
                                             <template #icon>
                                                 <n-icon :component="LanguageTwotone"/>
@@ -127,7 +132,7 @@ const appStore = useAppStore();
                                                     <n-text>{{ translations.tags }}:&nbsp;</n-text>
 
                                                     <n-button v-for="tag in current.tags" text type="info"
-                                                              @click="filter.search = tag">
+                                                              @click="search = tag">
                                                         {{ tag }}
                                                     </n-button>
                                                 </n-space>
@@ -144,7 +149,7 @@ const appStore = useAppStore();
 
                                                     <!-- 复制 -->
 
-                                                    <n-button @click="current.copy()">
+                                                    <n-button @click="current?.copy()">
                                                         <template #icon>
                                                             <n-icon :component="ContentCopyTwotone"/>
                                                         </template>
@@ -152,7 +157,7 @@ const appStore = useAppStore();
 
                                                     <!-- 分享 -->
 
-                                                    <n-button @click="current.share()">
+                                                    <n-button @click="current?.share()">
                                                         <template #icon>
                                                             <n-icon :component="ShareTwotone"/>
                                                         </template>

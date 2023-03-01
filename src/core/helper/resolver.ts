@@ -14,7 +14,7 @@ export function tryResolveDictFromHash() {
                     currentLang.value = item.language;
                 }
 
-                return dicts.value.find(_ => decodeURIComponent(item.title) === _.title);
+                return dicts.value.find(dict => decodeURIComponent(item.title) === dict.title);
             }
         } catch (e) {
             api.$message.error(translations.value.error);

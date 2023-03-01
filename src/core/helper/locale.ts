@@ -28,7 +28,10 @@ export const currentLang = computed<AvailableLangCodes>({
     }
 });
 
-const items = {
+const items: Record<AvailableLangCodes, {
+    dicts: Dict[],
+    translations: Translations
+}> = {
     zh: {
         dicts: parseDictCode(dict_code_zh),
         translations: transitions_zh
@@ -41,18 +44,15 @@ const items = {
         dicts: parseDictCode(dict_code_ja),
         translations: transitions_ja
     }
-} as Record<AvailableLangCodes, {
-    dicts: Dict[],
-    translations: Translations
-}>;
+};
 
 export const languageSelectOptions = computed(() => {
     return Object.values(items).map(item => {
-        return {
+        return <MenuOption>{
             label: item.translations._name,
             key: item.translations._code,
             disabled: currentLang.value === item.translations._code
-        } as MenuOption;
+        };
     });
 });
 
