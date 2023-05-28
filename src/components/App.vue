@@ -64,14 +64,12 @@
 
     const items = computed(() => {
         const result = dict.value.filter(item => {
-            const { title, tags } = item as DictItem
             const searchValue = search.value.toLowerCase()
 
             return [
-                !!title
-                        ?.toLowerCase()
+                !!item.title.toLowerCase()
                         .match(searchValue),
-                tags.map(tag => {
+                item.tags.map(tag => {
                     return tag.toLowerCase()
                 }).includes(searchValue)
             ].includes(true)
