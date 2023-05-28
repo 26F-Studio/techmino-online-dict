@@ -41,14 +41,14 @@
 
     const i18n = useI18n()
 
-    const dictMap = {
+    const dictMap: Record<string, DictItem[]> = {
         en: dict_en,
         ja: dict_ja,
         zh: dict_zh
     }
 
     const dict = computed(() => {
-        return dictMap[i18n.locale.value] as DictItem[]
+        return dictMap[i18n.locale.value]
     })
 
     // 处理 hash
@@ -91,6 +91,10 @@
         current.value = undefined
         search.value = value
     }
+
+    function setLocale(value: string) {
+        i18n.locale.value = value
+    }
 </script>
 
 <template>
@@ -112,7 +116,7 @@
 
                     <n-dropdown :options='languageSelectOptions' :value='$i18n.locale' animated
                                 trigger='click'
-                                @select='v => $i18n.locale = v'>
+                                @select='setLocale'>
                         <n-button>
                             <template #icon>
                                 <n-icon :component='LanguageTwotone' />

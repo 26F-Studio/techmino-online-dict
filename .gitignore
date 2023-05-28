@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 Game
-src/dict/*
+src/dict/*.json

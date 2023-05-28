@@ -43,7 +43,7 @@ export const i18n = createI18n({
     }
 })
 
-export const categoryColors = {
+export const categoryColors: Record<string, string> = {
     help: '#fdba74',
     org: '#fbb741',
     game: '#14a3c7',
