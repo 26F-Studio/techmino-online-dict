@@ -1,9 +1,12 @@
-import {defineConfig} from "vite";
-import vue from "@vitejs/plugin-vue";
-import {resolve as resolvePath} from "path";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import {NaiveUiResolver} from "unplugin-vue-components/resolvers";
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { resolve as resolvePath } from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+
+// @ts-ignore
+import convert from './plugins/convert.ts'
 
 export default defineConfig({
     base: process.env.VITE_BASE_PUBLIC_PATH,
@@ -13,6 +16,8 @@ export default defineConfig({
         }
     },
     plugins: [
+        convert(),
+
         vue(),
         AutoImport({
             imports: [
@@ -33,4 +38,4 @@ export default defineConfig({
             ]
         })
     ]
-});
+})

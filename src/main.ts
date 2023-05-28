@@ -1,16 +1,14 @@
-import "@/styles/main.scss";
-import persist from "pinia-plugin-persist";
-import App from "@/components/App.vue";
-import {createPinia} from "pinia";
+import '@/styles/main.scss'
+import App from '@/components/App.vue'
+import { i18n, pinia } from '@/core/shared'
 
 window.addEventListener('load', () => {
     const app = createApp({
         render: () => h(App)
-    });
+    })
 
-    const pinia = createPinia();
-    pinia.use(persist);
+    app.use(pinia)
+    app.use(i18n)
 
-    app.use(pinia);
-    app.mount('#app');
-});
+    app.mount('#app')
+})
