@@ -6,7 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 // @ts-ignore
-import convert from './plugins/convert.ts'
+import convert from './scripts/convert.ts'
 
 export default defineConfig({
     base: process.env.VITE_BASE_PUBLIC_PATH,

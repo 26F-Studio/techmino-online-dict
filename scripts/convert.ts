@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import { readdir, readFile, writeFile } from 'node:fs/promises'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { Expression, parse as parseLua, Statement } from 'luaparse'
 import { get, has, trim } from 'lodash-es'
@@ -10,7 +10,7 @@ class Parser {
         CHAR: {
             mino: ['Z', 'S', 'J', 'L', 'T', 'O', 'I', 'Z5', 'S5', 'P', 'Q', 'F', 'E', 'T5', 'U', 'V', 'W', 'X', 'J5', 'L5', 'R', 'Y', 'N', 'H', 'I5', 'I3', 'C', 'I2', 'O1']
                     .reduce((map, piece) => {
-                        map[piece] = `<i class="not-italic text-cyan-500 text-4xl mino ${piece}"></i>`
+                        map[piece] = `<i class='not-italic text-cyan-500 text-4xl mino ${piece}'></i>`
                         return map
                     }, {} as Record<string, string>)
         },
@@ -223,15 +223,15 @@ class Parser {
 }
 
 export default () => ({
-    async buildStart() {
+    buildStart() {
         const base = resolve(__dirname, '../Game/parts/language/')
-        const files = await readdir(base)
+        const files = readdirSync(base)
 
         for (const file of files) {
             const filePath = resolve(base, file)
 
             if (file.startsWith('dict')) {
-                const buffer = await readFile(filePath)
+                const buffer = readFileSync(filePath)
                 const code = buffer.toString()
 
                 const items = Parser.parse(code).map(item => {
@@ -242,7 +242,7 @@ export default () => ({
                     return item
                 })
 
-                await writeFile(resolve(__dirname, '../src/dict', file.split('.')[0] + '.json'), JSON.stringify(items).replace(/\\\\/g, '\\'))
+                writeFileSync(resolve(__dirname, '../src/dict', file.split('.')[0] + '.json'), JSON.stringify(items).replace(/\\\\/g, '\\'))
             }
         }
     }
