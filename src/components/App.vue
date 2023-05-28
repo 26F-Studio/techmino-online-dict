@@ -52,15 +52,24 @@
     })
 
     // 处理 hash
-    if (location.hash.length > 1) {
-        current.value = find([
-            ...dictMap.en,
-            ...dictMap.ja,
-            ...dictMap.zh
-        ], {
-            id: location.hash.substring(1)
-        })
+
+    function checkHash() {
+        if (location.hash.length > 1) {
+            current.value = find([
+                ...dictMap.en,
+                ...dictMap.ja,
+                ...dictMap.zh
+            ], {
+                id: location.hash.substring(1)
+            })
+        }
     }
+
+    window.addEventListener('hashchange', () => {
+        checkHash()
+    })
+
+    checkHash()
 
     const items = computed(() => {
         const result = dict.value.filter(item => {
