@@ -1604,9 +1604,9 @@ A mobile Tetris game by Electronic Arts (EA). It has the gravity mechanism, and 
 This game has no longer been available since April 2020.`,link:"",id:"571ac31cf435ff23c3f835e3532ba5250420fd6c"},{title:"Tetris (EA)",tags:["tetris","ea","galaxy","universe","cosmos","mobile","phone"],category:"game",content:`iOS/Android | Singleplayer/Multiplayer?
 Another mobile Tetris game by EA. It has two control modes – Swipe and One-Touch. It also has a Galaxy Mode besides the Marathon Mode (with gravity mechanism), and the goal of this mode is to clear all Galaxy minoes before the sequence runs out.
 
-This game has no longer been available since April 2020.`,link:"",id:"b73a0f0e3f95ec07a9fb2f66246eb3ba392f1fa9"},{title:"Tetris (PlayStudios)",tags:["tetris","playstudios","mobile","phone"],category:"game",content:`iOS/Android | Singleplayer
-The mobile Tetris game from PlayStudios Inc. It has a 3-minute ultra mode, a marathon mode, and a 100-player Royale mode.
-[The UI is great, but its controls are not so good.]`,link:"",id:"d11a49ba6a0bedd85f75c54f92f0c7f4f70965dd"},{title:"Tetris Beat",tags:["n3twork","rhythm"],category:"game",content:`iOS | Singleplayer
+This game has no longer been available since April 2020.`,link:"",id:"b73a0f0e3f95ec07a9fb2f66246eb3ba392f1fa9"},{title:"Tetris (N3TWORK)",tags:["tetris","n3twork","mobile","phone"],category:"game",content:`iOS/Android | Singleplayer
+The mobile Tetris game from N3TWORK Inc. It has a 3-minute ultra mode, a marathon mode, and a 100-player Royale mode.
+[The UI is great, but its controls are not so good.]`,link:"",id:"64b89d5c14e34a34a429a0add90c5f392308b1d2"},{title:"Tetris Beat",tags:["n3twork","rhythm"],category:"game",content:`iOS | Singleplayer
 A mobile Tetris game from N3TWORK for Apple Arcade. It has a “Beat” mode besides the Marathon mode, but you only have to drop the blocks in rhythm with the BGM.
 [The effects are very heavy, and the controls are not so good.]`,link:"",id:"9c751e5622d4ba5a1c35f3c3672ffac0c18bd06d"},{title:"Tetris Journey",tags:["tetrisjourney","mobile","phone","huanyouji"],category:"game",content:`iOS/Android | Singleplayer
 A now-defunct official mobile Tetris game developed by Tencent (available exclusively in China). It had level modes, battle modes, and some single-player modes. You could customize the sizes and positions of the virtual keys, but you could not adjust DAS or ARR.
@@ -2066,11 +2066,11 @@ EAが開発したもう1つのスマートフォン用公式テトリス
 またマラソンの他にギャラクシーモードというものが存在する
 このモードのクリア条件は指定されたミノを使い切る前にギャラクシーミノを消去することです
 
-このゲームは2020年4月に配信を終了しています`,link:"",id:"1155aa6fb77bd574703ed5c7e591e6c4abd0e463"},{title:"Tetris (PlayStudios)",tags:["tetris","playstudios","mobile","phone","テトリス","スマホ","スマートフォン","モバイル"],category:"game",content:`iOS/Android |シングルプレイ
-PlayStudiosが発行したスマートフォン用の公式テトリス
+このゲームは2020年4月に配信を終了しています`,link:"",id:"1155aa6fb77bd574703ed5c7e591e6c4abd0e463"},{title:"Tetris (N3TWORK)",tags:["tetris","n3twork","mobile","phone","テトリス","スマホ","スマートフォン","モバイル"],category:"game",content:`iOS/Android |シングルプレイ
+N3TWORKが開発したスマートフォン用の公式テトリス
 3分のウルトラ、マラソン、100人(cpu)のバトルロイヤルモードがある
 
-[UIは素晴らしいが操作性が良くない]`,link:"",id:"241c26fbe74ab36924b65e1562a5f65a21377734"},{title:"Tetris Beat",tags:["n3twork","rhythm","リズム","ビート","beat","スマホ","スマートフォン","モバイル","mobile","phone"],category:"game",content:`iOS | シングルプレイ
+[UIは素晴らしいが操作性が良くない]`,link:"",id:"e8f98017658c97afea81daac7c4adc0589777a41"},{title:"Tetris Beat",tags:["n3twork","rhythm","リズム","ビート","beat","スマホ","スマートフォン","モバイル","mobile","phone"],category:"game",content:`iOS | シングルプレイ
 N3TWORKがAppleアーケードで配信しているスマートフォン用の公式テトリス
 マラソンの他にビートモードがあるがBGMのリズムに合わせてミノを置いて行くだけである
 
@@ -2657,11 +2657,11 @@ TO-S（研究服，研究群群友自己开的服，很稳定，需要进群注�
 简称闪电战，EA代理的一款移动端方块，有重力连锁机制，限时2分钟，游戏开始会掉下一堆小方块；持续消行会进入Frenzy模式（场地下方会不断冒出垃圾行，帮助玩家制造大连锁，如果多次落块没有消行会强制结束Frenzy）。有非常多的道具。
 当新出现的方块与场地现有方块重叠时，场地最上方的几行会被自动清除，游戏不结束。已于2020年4月下架。`,link:"",id:"a5c738adc280fad07bfbb4dd1476d7b7f904ed19"},{title:"Tetris (EA)",tags:["tetris","ea"],category:"game",content:`iOS/Android | 单机/多人?
 EA代理的一款宇宙主题的移动端方块。有滑动操控和单点触控两种操作模式；除经典的马拉松外还有一个星系模式（地图挖掘），有重力连锁机制，目标是在限定块数内消除所有地图块。
-已于2020年4月下架。`,link:"",id:"027f9038af9c7e4d791be8f584b668a35a2cc51e"},{title:"Tetris (PlayStudios)",tags:["Tetris","playstudios"],category:"game",content:`iOS/Android | 单机/多人
-PlayStudios代理的一款移动端方块，有马拉松、3分钟限时打分和Royale（最多100人对战）模式。
-[UI设计比较不错，但不支持自定义键位，而且默认的按钮也很小导致控制也不是很舒服]`,link:"",id:"6948a560a44b6e65b30494477600a9bf83309cd6"},{title:"Tetris Beat",tags:["节奏","n3twork"],category:"game",content:`iOS | 单机
+已于2020年4月下架。`,link:"",id:"027f9038af9c7e4d791be8f584b668a35a2cc51e"},{title:"Tetris Beat",tags:["节奏","n3twork"],category:"game",content:`iOS | 单机
 N3TWORK代理的一款移动端方块。除了马拉松以外游戏还有一个 “Beat” 模式，但只需根据BGM的节奏落块就可以得到额外分数。
-[特效比较瞎眼，不支持自定义键位，而且默认的按钮也很小导致控制也不是很舒服]`,link:"",id:"2b5e658415906134fc5c084c815256cd029516b3"},{title:"俄罗斯方块环游记",tags:["tetris","journey","huanyouji"],category:"game",content:`iOS/Android | 单机/多人
+[特效比较瞎眼，不支持自定义键位，而且默认的按钮也很小导致控制也不是很舒服]`,link:"",id:"2b5e658415906134fc5c084c815256cd029516b3"},{title:"Tetris (N3TWORK)",tags:["Tetris","n3twork"],category:"game",content:`iOS/Android | 单机/多人
+N3TWORK代理的一款移动端方块，有马拉松、3分钟限时打分和Royale（最多100人对战）模式。
+[UI设计比较不错，但不支持自定义键位，而且默认的按钮也很小导致控制也不是很舒服]`,link:"",id:"4eca9f2aa25d69d08fd239754108be323894eccb"},{title:"俄罗斯方块环游记",tags:["tetris","journey","huanyouji"],category:"game",content:`iOS/Android | 单机/多人
 简称环游记，国内第一款正版授权手游方块。有闯关模式、对战模式和几个单机模式。闯关模式有各种各样有趣规则大多数有重力连锁，对战规则同现代方块，可以自定义虚拟按键的大小和位置，但是不能自定义DAS/ARR。已于2023年2月15日停服。`,link:"",id:"775c32db1ab6f2e15de9655a6d2c017243dfa554"},{title:"JJ块",tags:["手机","gougou"],category:"game",content:`Android | 单机/多人
 JJ棋牌平台下一个休闲游戏，Android端百度 “JJ比赛” 官网下载平台后可以找到（找不到的原因是iOS系统或者没在官网下载或者被限制不可直接访问游戏）。竖屏，输入延迟很小，可自定义DAS/ARR/20G软降，简单自定义键位，无Hold，没有B2B，无攻击缓冲不可抵消，每次攻击上限为4，连击较强，其他同现代方块。`,link:"",id:"0abb741e07432d757fe5f63dfc049c4abd4371a6"},{title:"火拼俄罗斯",tags:["huopin","qq"],category:"game",content:`Windows | 多人
 腾讯游戏大厅的方块，场地12列，打字的 DAS 和 ARR，1 Next无 Hold，攻击途径只有消4打3、 消3打2，垃圾行为国际象棋棋盘式，几乎不可能挖掘。`,link:"",id:"17f9bdeb539060af71e18f559429b15181f1a095"},{title:"LPM",tags:["速度","sudu"],category:"term",content:`Line Per Minute
