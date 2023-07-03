@@ -9,7 +9,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['Harmony Sans SC', 'Harmony Sans', ...defaultTheme.fontFamily.sans]
+                'sans': ['Harmony Sans SC', 'Harmony Sans', ...defaultTheme.fontFamily.sans, 'proportional']
             }
         }
     },

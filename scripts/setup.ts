@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { copyFileSync, existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { Expression, parse as parseLua, Statement } from 'luaparse'
 import { get, has, trim } from 'lodash-es'
@@ -265,8 +265,17 @@ class Parser {
 	}
 }
 
-export default () => ({
-	buildStart() {
+const steps = {
+	copyFonts() {
+		const target = resolve(__dirname, '../src/fonts/proportional.otf')
+
+		if (existsSync(target)) {
+			unlinkSync(target)
+		}
+
+		copyFileSync(resolve(__dirname, '../Game/parts/fonts/proportional.otf'), target)
+	},
+	convertDict() {
 		const base = resolve(__dirname, '../Game/parts/language/')
 		const files = readdirSync(base)
 
@@ -289,4 +298,11 @@ export default () => ({
 			}
 		}
 	}
+}
+
+export default () => ({
+    buildStart() {
+        steps.copyFonts()
+        steps.convertDict()
+    }
 })
