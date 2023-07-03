@@ -1,31 +1,32 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
+	import { DictItem } from '@/types/dict'
 
-    import { DictItem } from '@/types/dict'
+	const props = defineProps<{
+		item: DictItem
+	}>()
 
-    const props = defineProps<{
-        item: DictItem
-    }>()
+	const title = computed(() => {
+		return props.item.title.trim()
+	})
 
-    const regexp = /^tetris/ig
-    const matches = props.item.title.match(regexp)
+	const regexp = new RegExp('^tetris', 'ig')
+	const matches = title.value.match(regexp)
 </script>
 
 <template>
-    <template v-if='!item.title'>
-        ?
-    </template>
+	<template v-if="!item.title"> ?</template>
 
-    <n-el v-else-if='matches'>
-        <n-popover>
-            <template #trigger>
-                <i class='zChan thinking not-italic text-xl mr-1' />
-            </template>
+	<n-el v-else-if="matches">
+		<n-popover>
+			<template #trigger>
+				<i class="zChan thinking not-italic text-xl mr-1" />
+			</template>
 
-            {{ matches[0] }}
-        </n-popover>
+			{{ matches[0] }}
+		</n-popover>
 
-        {{ item.title.replace(regexp, '') }}
-    </n-el>
+		{{ title.replace(regexp, '') }}
+	</n-el>
 
-    <template v-else>{{ item.title }}</template>
+	<template v-else>{{ item.title }}</template>
 </template>
