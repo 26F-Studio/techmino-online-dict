@@ -99,8 +99,13 @@
 		appStore.theme = 'light'
 	}
 
-	function backAndSearch(value: string) {
+	function back() {
 		current.value = undefined
+		location.replace(new URL(location.pathname, location.href).toString())
+	}
+
+	function backAndSearch(value: string) {
+		back()
 		search.value = value
 	}
 
@@ -151,7 +156,7 @@
 						<!-- 内容显示时显示返回键 -->
 
 						<n-space v-else justify="center">
-							<n-button @click="current = undefined">
+							<n-button @click="back">
 								{{ $t('back') }}
 							</n-button>
 						</n-space>
