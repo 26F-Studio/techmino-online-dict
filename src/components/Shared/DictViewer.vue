@@ -1,93 +1,103 @@
-<script lang='ts' setup>
-    import { EarthFilled } from '@vicons/carbon'
-    import { ContentCopyTwotone, ShareTwotone } from '@vicons/material'
-    import { DictItem } from '@/types/dict'
-    import { useClipboard } from '@vueuse/core'
-    import { useI18n } from 'vue-i18n'
-    import Title from '@/components/Shared/Title.vue'
+<script lang="ts" setup>
+	import { EarthFilled } from '@vicons/carbon'
+	import { ContentCopyTwotone, ShareTwotone } from '@vicons/material'
+	import { DictItem } from '@/types/dict'
+	import { useClipboard } from '@vueuse/core'
+	import { useI18n } from 'vue-i18n'
+	import Title from '@/components/Shared/Title.vue'
 
-    defineProps<{
-        item: DictItem
-    }>()
+	const props = defineProps<{
+		item: DictItem
+	}>()
 
-    const i18n = useI18n()
-    const $message = useMessage()
+	const $emits = defineEmits(['tag-click'])
 
-    async function useCopy(source: string) {
-        const { copy, isSupported } = useClipboard({
-            source, legacy: true
-        })
+	const i18n = useI18n()
+	const $message = useMessage()
 
-        if (!isSupported) {
-            $message.error(i18n.t('error'))
-            return
-        }
+	const content = computed(() => {
+		return props.item.content.replace(/\\t/g, ' '.repeat(4)).replace(/\\n/g, '<br>')
+	})
 
-        await copy()
-        $message.success(i18n.t('copied'))
-    }
+	const link = computed(() => {
+		return new URL(`#${props.item.id}`, location.href).toString()
+	})
 
-    function share(item: DictItem) {
-        useCopy(new URL(`#${item.id}`, location.href).toString())
-    }
+	async function useCopy(source: string) {
+		const { copy, isSupported } = useClipboard({
+			source,
+			legacy: true
+		})
 
-    function copy(item: DictItem) {
-        useCopy([
-            item.title,
-            '',
-            item.content,
-            '',
-            `${i18n.t('copy_from')}: ${i18n.t('title')}`
-        ].join('\r\n'))
-    }
+		if (!isSupported) {
+			$message.error(i18n.t('error'))
+			return
+		}
 
-    const $emits = defineEmits(['tag-click'])
+		await copy()
+		$message.success(i18n.t('copied'))
+	}
+
+	function share(item: DictItem) {
+		useCopy(link.value)
+	}
+
+	function copy(item: DictItem) {
+		useCopy(
+			[item.title, '', ...content.value.split('<br>'), '', `${i18n.t('copy_from')}: ${i18n.t('title')}`].join(
+				'\r\n'
+			)
+		)
+	}
+
+	onMounted(() => {
+		location.replace(link.value)
+	})
 </script>
 
 <template>
-    <n-space vertical>
-        <n-h2>
-            <Title :item='item' />
-        </n-h2>
+	<n-space vertical>
+		<n-h2>
+			<Title :item="item" />
+		</n-h2>
 
-        <n-text class='whitespace-pre-wrap' v-html='item.content' />
+		<n-text class="whitespace-pre-wrap" v-html="content" />
 
-        <n-space class='mt-10 items-end' justify='space-between'>
-            <n-space size='small'>
-                <n-text>{{ $t('tags') }}:&nbsp;</n-text>
+		<n-space class="mt-10 items-end" justify="space-between">
+			<n-space size="small">
+				<n-text>{{ $t('tags') }}:&nbsp;</n-text>
 
-                <n-button v-for='tag in item.tags' text type='info'
-                          @click="$emits('tag-click', tag)">
-                    {{ tag }}
-                </n-button>
-            </n-space>
+				<n-button v-for="tag in item.tags" text type="info" @click="$emits('tag-click', tag)">
+					{{ tag }}
+				</n-button>
+			</n-space>
 
-            <n-space>
-                <!-- 外链 -->
+			<n-space>
+				<!-- 外链 -->
 
-                <n-button v-if='item.link' :href='item.link'
-                          tag='a'>
-                    <template #icon>
-                        <n-icon :component='EarthFilled' />
-                    </template>
-                </n-button>
+				<n-button v-if="item.link" :href="item.link" tag="a">
+					<template #icon>
+						<n-icon :component="EarthFilled" />
+					</template>
+				</n-button>
 
-                <!-- 复制 -->
+				<!-- 复制 -->
 
-                <n-button @click='copy(item)'>
-                    <template #icon>
-                        <n-icon :component='ContentCopyTwotone' />
-                    </template>
-                </n-button>
+				<n-button @click="copy(item)">
+					<template #icon>
+						<n-icon :component="ContentCopyTwotone" />
+					</template>
+				</n-button>
 
-                <!-- 分享 -->
+				<!-- 分享 -->
 
-                <n-button @click='share(item)'>
-                    <template #icon>
-                        <n-icon :component='ShareTwotone' />
-                    </template>
-                </n-button>
-            </n-space>
-        </n-space>
-    </n-space>
+				<n-button @click="share(item)">
+					<template #icon>
+						<n-icon :component="ShareTwotone" />
+					</template>
+				</n-button>
+			</n-space>
+		</n-space>
+	</n-space>
 </template>
+
