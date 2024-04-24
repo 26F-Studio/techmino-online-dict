@@ -1,10 +1,10 @@
 <script lang="ts" setup>
+	import Title from '@/components/Shared/Title.vue'
+	import { DictItem } from '@/types/dict'
 	import { EarthFilled } from '@vicons/carbon'
 	import { ContentCopyTwotone, ShareTwotone } from '@vicons/material'
-	import { DictItem } from '@/types/dict'
 	import { useClipboard } from '@vueuse/core'
 	import { useI18n } from 'vue-i18n'
-	import Title from '@/components/Shared/Title.vue'
 
 	const props = defineProps<{
 		item: DictItem

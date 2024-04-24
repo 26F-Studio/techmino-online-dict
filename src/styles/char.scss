@@ -1,1443 +1,1443 @@
 @font-face {
-    font-family: 'proportional';
-    src: url('../fonts/proportional.otf');
+	font-family: 'proportional';
+	src: url('../fonts/proportional.otf');
 }
 
 .zChan.none::before {
-    @apply font-[proportional];
-    content: '\f0000'
+	@apply font-[proportional];
+	content: '\f0000'
 }
 
 .zChan.normal::before {
-    @apply font-[proportional];
-    content: '\f0001'
+	@apply font-[proportional];
+	content: '\f0001'
 }
 
 .zChan.full::before {
-    @apply font-[proportional];
-    content: '\f0002'
+	@apply font-[proportional];
+	content: '\f0002'
 }
 
 .zChan.happy::before {
-    @apply font-[proportional];
-    content: '\f0003'
+	@apply font-[proportional];
+	content: '\f0003'
 }
 
 .zChan.confused::before {
-    @apply font-[proportional];
-    content: '\f0004'
+	@apply font-[proportional];
+	content: '\f0004'
 }
 
 .zChan.grinning::before {
-    @apply font-[proportional];
-    content: '\f0005'
+	@apply font-[proportional];
+	content: '\f0005'
 }
 
 .zChan.frowning::before {
-    @apply font-[proportional];
-    content: '\f0006'
+	@apply font-[proportional];
+	content: '\f0006'
 }
 
 .zChan.tears::before {
-    @apply font-[proportional];
-    content: '\f0007'
+	@apply font-[proportional];
+	content: '\f0007'
 }
 
 .zChan.anxious::before {
-    @apply font-[proportional];
-    content: '\f0008'
+	@apply font-[proportional];
+	content: '\f0008'
 }
 
 .zChan.rage::before {
-    @apply font-[proportional];
-    content: '\f0009'
+	@apply font-[proportional];
+	content: '\f0009'
 }
 
 .zChan.fear::before {
-    @apply font-[proportional];
-    content: '\f000A'
+	@apply font-[proportional];
+	content: '\f000A'
 }
 
 .zChan.question::before {
-    @apply font-[proportional];
-    content: '\f000B'
+	@apply font-[proportional];
+	content: '\f000B'
 }
 
 .zChan.angry::before {
-    @apply font-[proportional];
-    content: '\f000C'
+	@apply font-[proportional];
+	content: '\f000C'
 }
 
 .zChan.shocked::before {
-    @apply font-[proportional];
-    content: '\f000D'
+	@apply font-[proportional];
+	content: '\f000D'
 }
 
 .zChan.ellipses::before {
-    @apply font-[proportional];
-    content: '\f000E'
+	@apply font-[proportional];
+	content: '\f000E'
 }
 
 .zChan.sweat_drop::before {
-    @apply font-[proportional];
-    content: '\f000F'
+	@apply font-[proportional];
+	content: '\f000F'
 }
 
 .zChan.cry::before {
-    @apply font-[proportional];
-    content: '\f0010'
+	@apply font-[proportional];
+	content: '\f0010'
 }
 
 .zChan.cracked::before {
-    @apply font-[proportional];
-    content: '\f0011'
+	@apply font-[proportional];
+	content: '\f0011'
 }
 
 .zChan.qualified::before {
-    @apply font-[proportional];
-    content: '\f0012'
+	@apply font-[proportional];
+	content: '\f0012'
 }
 
 .zChan.unqualified::before {
-    @apply font-[proportional];
-    content: '\f0013'
+	@apply font-[proportional];
+	content: '\f0013'
 }
 
 .zChan.understand::before {
-    @apply font-[proportional];
-    content: '\f0014'
+	@apply font-[proportional];
+	content: '\f0014'
 }
 
 .zChan.thinking::before {
-    @apply font-[proportional];
-    content: '\f0015'
+	@apply font-[proportional];
+	content: '\f0015'
 }
 
 .zChan.spark::before {
-    @apply font-[proportional];
-    content: '\f0016'
+	@apply font-[proportional];
+	content: '\f0016'
 }
 
 .mino.Z::before {
-    @apply font-[proportional];
-    content: '\f0040'
+	@apply font-[proportional];
+	content: '\f0040'
 }
 
 .mino.S::before {
-    @apply font-[proportional];
-    content: '\f0041'
+	@apply font-[proportional];
+	content: '\f0041'
 }
 
 .mino.J::before {
-    @apply font-[proportional];
-    content: '\f0042'
+	@apply font-[proportional];
+	content: '\f0042'
 }
 
 .mino.L::before {
-    @apply font-[proportional];
-    content: '\f0043'
+	@apply font-[proportional];
+	content: '\f0043'
 }
 
 .mino.T::before {
-    @apply font-[proportional];
-    content: '\f0044'
+	@apply font-[proportional];
+	content: '\f0044'
 }
 
 .mino.O::before {
-    @apply font-[proportional];
-    content: '\f0045'
+	@apply font-[proportional];
+	content: '\f0045'
 }
 
 .mino.I::before {
-    @apply font-[proportional];
-    content: '\f0046'
+	@apply font-[proportional];
+	content: '\f0046'
 }
 
 .mino.Z5::before {
-    @apply font-[proportional];
-    content: '\f0047'
+	@apply font-[proportional];
+	content: '\f0047'
 }
 
 .mino.S5::before {
-    @apply font-[proportional];
-    content: '\f0048'
+	@apply font-[proportional];
+	content: '\f0048'
 }
 
 .mino.P::before {
-    @apply font-[proportional];
-    content: '\f0049'
+	@apply font-[proportional];
+	content: '\f0049'
 }
 
 .mino.Q::before {
-    @apply font-[proportional];
-    content: '\f004a'
+	@apply font-[proportional];
+	content: '\f004a'
 }
 
 .mino.F::before {
-    @apply font-[proportional];
-    content: '\f004b'
+	@apply font-[proportional];
+	content: '\f004b'
 }
 
 .mino.E::before {
-    @apply font-[proportional];
-    content: '\f004c'
+	@apply font-[proportional];
+	content: '\f004c'
 }
 
 .mino.T5::before {
-    @apply font-[proportional];
-    content: '\f004d'
+	@apply font-[proportional];
+	content: '\f004d'
 }
 
 .mino.U::before {
-    @apply font-[proportional];
-    content: '\f004e'
+	@apply font-[proportional];
+	content: '\f004e'
 }
 
 .mino.V::before {
-    @apply font-[proportional];
-    content: '\f004f'
+	@apply font-[proportional];
+	content: '\f004f'
 }
 
 .mino.W::before {
-    @apply font-[proportional];
-    content: '\f0050'
+	@apply font-[proportional];
+	content: '\f0050'
 }
 
 .mino.X::before {
-    @apply font-[proportional];
-    content: '\f0051'
+	@apply font-[proportional];
+	content: '\f0051'
 }
 
 .mino.J5::before {
-    @apply font-[proportional];
-    content: '\f0052'
+	@apply font-[proportional];
+	content: '\f0052'
 }
 
 .mino.L5::before {
-    @apply font-[proportional];
-    content: '\f0053'
+	@apply font-[proportional];
+	content: '\f0053'
 }
 
 .mino.R::before {
-    @apply font-[proportional];
-    content: '\f0054'
+	@apply font-[proportional];
+	content: '\f0054'
 }
 
 .mino.Y::before {
-    @apply font-[proportional];
-    content: '\f0055'
+	@apply font-[proportional];
+	content: '\f0055'
 }
 
 .mino.N::before {
-    @apply font-[proportional];
-    content: '\f0056'
+	@apply font-[proportional];
+	content: '\f0056'
 }
 
 .mino.H::before {
-    @apply font-[proportional];
-    content: '\f0057'
+	@apply font-[proportional];
+	content: '\f0057'
 }
 
 .mino.I5::before {
-    @apply font-[proportional];
-    content: '\f0058'
+	@apply font-[proportional];
+	content: '\f0058'
 }
 
 .mino.I3::before {
-    @apply font-[proportional];
-    content: '\f0059'
+	@apply font-[proportional];
+	content: '\f0059'
 }
 
 .mino.C::before {
-    @apply font-[proportional];
-    content: '\f005a'
+	@apply font-[proportional];
+	content: '\f005a'
 }
 
 .mino.I2::before {
-    @apply font-[proportional];
-    content: '\f005b'
+	@apply font-[proportional];
+	content: '\f005b'
 }
 
 .mino.O1::before {
-    @apply font-[proportional];
-    content: '\f005c'
+	@apply font-[proportional];
+	content: '\f005c'
 }
 
 
 .icon.menu::before {
-    @apply font-[proportional];
-    content: '\f0080'
+	@apply font-[proportional];
+	content: '\f0080'
 }
 
 .icon.music::before {
-    @apply font-[proportional];
-    content: '\f0081'
+	@apply font-[proportional];
+	content: '\f0081'
 }
 
 .icon.language::before {
-    @apply font-[proportional];
-    content: '\f0082'
+	@apply font-[proportional];
+	content: '\f0082'
 }
 
 .icon.back::before {
-    @apply font-[proportional];
-    content: '\f0083'
+	@apply font-[proportional];
+	content: '\f0083'
 }
 
 .icon.play_pause::before {
-    @apply font-[proportional];
-    content: '\f0084'
+	@apply font-[proportional];
+	content: '\f0084'
 }
 
 .icon.info::before {
-    @apply font-[proportional];
-    content: '\f0085'
+	@apply font-[proportional];
+	content: '\f0085'
 }
 
 .icon.help::before {
-    @apply font-[proportional];
-    content: '\f0086'
+	@apply font-[proportional];
+	content: '\f0086'
 }
 
 .icon.mute::before {
-    @apply font-[proportional];
-    content: '\f0087'
+	@apply font-[proportional];
+	content: '\f0087'
 }
 
 .icon.volume_up::before {
-    @apply font-[proportional];
-    content: '\f0088'
+	@apply font-[proportional];
+	content: '\f0088'
 }
 
 .icon.volume_down::before {
-    @apply font-[proportional];
-    content: '\f0089'
+	@apply font-[proportional];
+	content: '\f0089'
 }
 
 .icon.retry_spin::before {
-    @apply font-[proportional];
-    content: '\f008A'
+	@apply font-[proportional];
+	content: '\f008A'
 }
 
 .icon.filledLogo::before {
-    @apply font-[proportional];
-    content: '\f008B'
+	@apply font-[proportional];
+	content: '\f008B'
 }
 
 .icon.hollowLogo::before {
-    @apply font-[proportional];
-    content: '\f008C'
+	@apply font-[proportional];
+	content: '\f008C'
 }
 
 .icon.toUp::before {
-    @apply font-[proportional];
-    content: '\f008D'
+	@apply font-[proportional];
+	content: '\f008D'
 }
 
 .icon.toDown::before {
-    @apply font-[proportional];
-    content: '\f008E'
+	@apply font-[proportional];
+	content: '\f008E'
 }
 
 .icon.toLeft::before {
-    @apply font-[proportional];
-    content: '\f008F'
+	@apply font-[proportional];
+	content: '\f008F'
 }
 
 .icon.toRight::before {
-    @apply font-[proportional];
-    content: '\f0090'
+	@apply font-[proportional];
+	content: '\f0090'
 }
 
 .icon.checkMark::before {
-    @apply font-[proportional];
-    content: '\f0091'
+	@apply font-[proportional];
+	content: '\f0091'
 }
 
 .icon.crossMark::before {
-    @apply font-[proportional];
-    content: '\f0092'
+	@apply font-[proportional];
+	content: '\f0092'
 }
 
 .icon.musicMark::before {
-    @apply font-[proportional];
-    content: '\f0093'
+	@apply font-[proportional];
+	content: '\f0093'
 }
 
 .icon.infoMark::before {
-    @apply font-[proportional];
-    content: '\f0094'
+	@apply font-[proportional];
+	content: '\f0094'
 }
 
 .icon.warnMark::before {
-    @apply font-[proportional];
-    content: '\f0095'
+	@apply font-[proportional];
+	content: '\f0095'
 }
 
 .icon.console::before {
-    @apply font-[proportional];
-    content: '\f0096'
+	@apply font-[proportional];
+	content: '\f0096'
 }
 
 .icon.globe::before {
-    @apply font-[proportional];
-    content: '\f0097'
+	@apply font-[proportional];
+	content: '\f0097'
 }
 
 .icon.video_camera::before {
-    @apply font-[proportional];
-    content: '\f0098'
+	@apply font-[proportional];
+	content: '\f0098'
 }
 
 .icon.settings::before {
-    @apply font-[proportional];
-    content: '\f0099'
+	@apply font-[proportional];
+	content: '\f0099'
 }
 
 .icon.mrz::before {
-    @apply font-[proportional];
-    content: '\f009A'
+	@apply font-[proportional];
+	content: '\f009A'
 }
 
 .icon.apple::before {
-    @apply font-[proportional];
-    content: '\f009B'
+	@apply font-[proportional];
+	content: '\f009B'
 }
 
 .icon.home::before {
-    @apply font-[proportional];
-    content: '\f009C'
+	@apply font-[proportional];
+	content: '\f009C'
 }
 
 .icon.cross_thick::before {
-    @apply font-[proportional];
-    content: '\f009D'
+	@apply font-[proportional];
+	content: '\f009D'
 }
 
 .icon.num0InSpin::before {
-    @apply font-[proportional];
-    content: '\f009E'
+	@apply font-[proportional];
+	content: '\f009E'
 }
 
 .icon.num1InSpin::before {
-    @apply font-[proportional];
-    content: '\f009F'
+	@apply font-[proportional];
+	content: '\f009F'
 }
 
 .icon.num2InSpin::before {
-    @apply font-[proportional];
-    content: '\f00A0'
+	@apply font-[proportional];
+	content: '\f00A0'
 }
 
 .icon.num3InSpin::before {
-    @apply font-[proportional];
-    content: '\f00A1'
+	@apply font-[proportional];
+	content: '\f00A1'
 }
 
 .icon.num4InSpin::before {
-    @apply font-[proportional];
-    content: '\f00A2'
+	@apply font-[proportional];
+	content: '\f00A2'
 }
 
 .icon.play::before {
-    @apply font-[proportional];
-    content: '\f00A3'
+	@apply font-[proportional];
+	content: '\f00A3'
 }
 
 .icon.pause::before {
-    @apply font-[proportional];
-    content: '\f00A4'
+	@apply font-[proportional];
+	content: '\f00A4'
 }
 
 .icon.nextFrame::before {
-    @apply font-[proportional];
-    content: '\f00A5'
+	@apply font-[proportional];
+	content: '\f00A5'
 }
 
 .icon.yen::before {
-    @apply font-[proportional];
-    content: '\f00A6'
+	@apply font-[proportional];
+	content: '\f00A6'
 }
 
 .icon.dollar::before {
-    @apply font-[proportional];
-    content: '\f00A7'
+	@apply font-[proportional];
+	content: '\f00A7'
 }
 
 .icon.euro::before {
-    @apply font-[proportional];
-    content: '\f00A8'
+	@apply font-[proportional];
+	content: '\f00A8'
 }
 
 .icon.pound::before {
-    @apply font-[proportional];
-    content: '\f00A9'
+	@apply font-[proportional];
+	content: '\f00A9'
 }
 
 .icon.bitcoin::before {
-    @apply font-[proportional];
-    content: '\f00AA'
+	@apply font-[proportional];
+	content: '\f00AA'
 }
 
 .icon.onebag::before {
-    @apply font-[proportional];
-    content: '\f00AB'
+	@apply font-[proportional];
+	content: '\f00AB'
 }
 
 .icon.export::before {
-    @apply font-[proportional];
-    content: '\f00AC'
+	@apply font-[proportional];
+	content: '\f00AC'
 }
 
 .icon.import::before {
-    @apply font-[proportional];
-    content: '\f00AD'
+	@apply font-[proportional];
+	content: '\f00AD'
 }
 
 .icon.trash::before {
-    @apply font-[proportional];
-    content: '\f00AE'
+	@apply font-[proportional];
+	content: '\f00AE'
 }
 
 .icon.loadOne::before {
-    @apply font-[proportional];
-    content: '\f00AF'
+	@apply font-[proportional];
+	content: '\f00AF'
 }
 
 .icon.saveOne::before {
-    @apply font-[proportional];
-    content: '\f00B0'
+	@apply font-[proportional];
+	content: '\f00B0'
 }
 
 .icon.loadTwo::before {
-    @apply font-[proportional];
-    content: '\f00B1'
+	@apply font-[proportional];
+	content: '\f00B1'
 }
 
 .icon.saveTwo::before {
-    @apply font-[proportional];
-    content: '\f00B2'
+	@apply font-[proportional];
+	content: '\f00B2'
 }
 
 .icon.zBook::before {
-    @apply font-[proportional];
-    content: '\f00B3'
+	@apply font-[proportional];
+	content: '\f00B3'
 }
 
 .icon.rankX::before {
-    @apply font-[proportional];
-    content: '\f00B4'
+	@apply font-[proportional];
+	content: '\f00B4'
 }
 
 .icon.rankU::before {
-    @apply font-[proportional];
-    content: '\f00B5'
+	@apply font-[proportional];
+	content: '\f00B5'
 }
 
 .icon.rankA::before {
-    @apply font-[proportional];
-    content: '\f00B6'
+	@apply font-[proportional];
+	content: '\f00B6'
 }
 
 .icon.rankB::before {
-    @apply font-[proportional];
-    content: '\f00B7'
+	@apply font-[proportional];
+	content: '\f00B7'
 }
 
 .icon.rankC::before {
-    @apply font-[proportional];
-    content: '\f00B8'
+	@apply font-[proportional];
+	content: '\f00B8'
 }
 
 .icon.rankD::before {
-    @apply font-[proportional];
-    content: '\f00B9'
+	@apply font-[proportional];
+	content: '\f00B9'
 }
 
 .icon.rankE::before {
-    @apply font-[proportional];
-    content: '\f00BA'
+	@apply font-[proportional];
+	content: '\f00BA'
 }
 
 .icon.rankF::before {
-    @apply font-[proportional];
-    content: '\f00BB'
+	@apply font-[proportional];
+	content: '\f00BB'
 }
 
 .icon.rankZ::before {
-    @apply font-[proportional];
-    content: '\f00BC'
+	@apply font-[proportional];
+	content: '\f00BC'
 }
 
 .icon.rankS::before {
-    @apply font-[proportional];
-    content: '\f00C2'
+	@apply font-[proportional];
+	content: '\f00C2'
 }
 
 .icon.speedOneEights::before {
-    @apply font-[proportional];
-    content: '\f00BD'
+	@apply font-[proportional];
+	content: '\f00BD'
 }
 
 .icon.speedOneHalf::before {
-    @apply font-[proportional];
-    content: '\f00BE'
+	@apply font-[proportional];
+	content: '\f00BE'
 }
 
 .icon.speedOne::before {
-    @apply font-[proportional];
-    content: '\f00BF'
+	@apply font-[proportional];
+	content: '\f00BF'
 }
 
 .icon.speedTwo::before {
-    @apply font-[proportional];
-    content: '\f00C0'
+	@apply font-[proportional];
+	content: '\f00C0'
 }
 
 .icon.speedFive::before {
-    @apply font-[proportional];
-    content: '\f00C1'
+	@apply font-[proportional];
+	content: '\f00C1'
 }
 
 .icon.bone::before {
-    @apply font-[proportional];
-    content: '\f00C3'
+	@apply font-[proportional];
+	content: '\f00C3'
 }
 
 .icon.invis::before {
-    @apply font-[proportional];
-    content: '\f00C4'
+	@apply font-[proportional];
+	content: '\f00C4'
 }
 
 .icon.bomb::before {
-    @apply font-[proportional];
-    content: '\f00C5'
+	@apply font-[proportional];
+	content: '\f00C5'
 }
 
 .icon.garbage::before {
-    @apply font-[proportional];
-    content: '\f00C6'
+	@apply font-[proportional];
+	content: '\f00C6'
 }
 
 .icon.copy::before {
-    @apply font-[proportional];
-    content: '\f00C7'
+	@apply font-[proportional];
+	content: '\f00C7'
 }
 
 
 .key.macCmd::before {
-    @apply font-[proportional];
-    content: '\f0100'
+	@apply font-[proportional];
+	content: '\f0100'
 }
 
 .key.macOpt::before {
-    @apply font-[proportional];
-    content: '\f0101'
+	@apply font-[proportional];
+	content: '\f0101'
 }
 
 .key.macCtrl::before {
-    @apply font-[proportional];
-    content: '\f0102'
+	@apply font-[proportional];
+	content: '\f0102'
 }
 
 .key.shift::before {
-    @apply font-[proportional];
-    content: '\f0103'
+	@apply font-[proportional];
+	content: '\f0103'
 }
 
 .key.capsLock::before {
-    @apply font-[proportional];
-    content: '\f0104'
+	@apply font-[proportional];
+	content: '\f0104'
 }
 
 .key.enter_or_return::before {
-    @apply font-[proportional];
-    content: '\f0105'
+	@apply font-[proportional];
+	content: '\f0105'
 }
 
 .key.backspace::before {
-    @apply font-[proportional];
-    content: '\f0106'
+	@apply font-[proportional];
+	content: '\f0106'
 }
 
 .key.clear::before {
-    @apply font-[proportional];
-    content: '\f0107'
+	@apply font-[proportional];
+	content: '\f0107'
 }
 
 .key.macFowardDel::before {
-    @apply font-[proportional];
-    content: '\f0108'
+	@apply font-[proportional];
+	content: '\f0108'
 }
 
 .key.macEsc::before {
-    @apply font-[proportional];
-    content: '\f0109'
+	@apply font-[proportional];
+	content: '\f0109'
 }
 
 .key.macTab::before {
-    @apply font-[proportional];
-    content: '\f010A'
+	@apply font-[proportional];
+	content: '\f010A'
 }
 
 .key.fn::before {
-    @apply font-[proportional];
-    content: '\f010B'
+	@apply font-[proportional];
+	content: '\f010B'
 }
 
 .key.macHome::before {
-    @apply font-[proportional];
-    content: '\f010C'
+	@apply font-[proportional];
+	content: '\f010C'
 }
 
 .key.macEnd::before {
-    @apply font-[proportional];
-    content: '\f010D'
+	@apply font-[proportional];
+	content: '\f010D'
 }
 
 .key.macPgup::before {
-    @apply font-[proportional];
-    content: '\f010E'
+	@apply font-[proportional];
+	content: '\f010E'
 }
 
 .key.macPgdn::before {
-    @apply font-[proportional];
-    content: '\f010F'
+	@apply font-[proportional];
+	content: '\f010F'
 }
 
 .key.macEnter::before {
-    @apply font-[proportional];
-    content: '\f0110'
+	@apply font-[proportional];
+	content: '\f0110'
 }
 
 .key.space::before {
-    @apply font-[proportional];
-    content: '\f0111'
+	@apply font-[proportional];
+	content: '\f0111'
 }
 
 .key.windows::before {
-    @apply font-[proportional];
-    content: '\f0112'
+	@apply font-[proportional];
+	content: '\f0112'
 }
 
 .key.alt::before {
-    @apply font-[proportional];
-    content: '\f0113'
+	@apply font-[proportional];
+	content: '\f0113'
 }
 
 .key.ctrl::before {
-    @apply font-[proportional];
-    content: '\f0114'
+	@apply font-[proportional];
+	content: '\f0114'
 }
 
 .key.winMenu::before {
-    @apply font-[proportional];
-    content: '\f0115'
+	@apply font-[proportional];
+	content: '\f0115'
 }
 
 .key.tab::before {
-    @apply font-[proportional];
-    content: '\f0116'
+	@apply font-[proportional];
+	content: '\f0116'
 }
 
 .key.esc::before {
-    @apply font-[proportional];
-    content: '\f0117'
+	@apply font-[proportional];
+	content: '\f0117'
 }
 
 .key.up::before {
-    @apply font-[proportional];
-    content: '\f0118'
+	@apply font-[proportional];
+	content: '\f0118'
 }
 
 .key.down::before {
-    @apply font-[proportional];
-    content: '\f0119'
+	@apply font-[proportional];
+	content: '\f0119'
 }
 
 .key.left::before {
-    @apply font-[proportional];
-    content: '\f011A'
+	@apply font-[proportional];
+	content: '\f011A'
 }
 
 .key.right::before {
-    @apply font-[proportional];
-    content: '\f011B'
+	@apply font-[proportional];
+	content: '\f011B'
 }
 
 .key.del::before {
-    @apply font-[proportional];
-    content: '\f011C'
+	@apply font-[proportional];
+	content: '\f011C'
 }
 
 .key.enterText::before {
-    @apply font-[proportional];
-    content: '\f011D'
+	@apply font-[proportional];
+	content: '\f011D'
 }
 
 .key.keyboard::before {
-    @apply font-[proportional];
-    content: '\f011E'
+	@apply font-[proportional];
+	content: '\f011E'
 }
 
 .key.macMediaEject::before {
-    @apply font-[proportional];
-    content: '\f011F'
+	@apply font-[proportional];
+	content: '\f011F'
 }
 
 .key.isoCtrl::before {
-    @apply font-[proportional];
-    content: '\f0120'
+	@apply font-[proportional];
+	content: '\f0120'
 }
 
 .key.isoAlt::before {
-    @apply font-[proportional];
-    content: '\f0121'
+	@apply font-[proportional];
+	content: '\f0121'
 }
 
 .key.macHomeAlt::before {
-    @apply font-[proportional];
-    content: '\f0122'
+	@apply font-[proportional];
+	content: '\f0122'
 }
 
 .key.macEndAlt::before {
-    @apply font-[proportional];
-    content: '\f0123'
+	@apply font-[proportional];
+	content: '\f0123'
 }
 
 .key.macPgupAlt::before {
-    @apply font-[proportional];
-    content: '\f0124'
+	@apply font-[proportional];
+	content: '\f0124'
 }
 
 .key.macPgdnAlt::before {
-    @apply font-[proportional];
-    content: '\f0125'
+	@apply font-[proportional];
+	content: '\f0125'
 }
 
 .key.iecPower::before {
-    @apply font-[proportional];
-    content: '\f0126'
+	@apply font-[proportional];
+	content: '\f0126'
 }
 
 
 .controller.xbox::before {
-    @apply font-[proportional];
-    content: '\f0180'
+	@apply font-[proportional];
+	content: '\f0180'
 }
 
 .controller.lt::before {
-    @apply font-[proportional];
-    content: '\f0181'
+	@apply font-[proportional];
+	content: '\f0181'
 }
 
 .controller.rt::before {
-    @apply font-[proportional];
-    content: '\f0182'
+	@apply font-[proportional];
+	content: '\f0182'
 }
 
 .controller.lb::before {
-    @apply font-[proportional];
-    content: '\f0183'
+	@apply font-[proportional];
+	content: '\f0183'
 }
 
 .controller.rb::before {
-    @apply font-[proportional];
-    content: '\f0184'
+	@apply font-[proportional];
+	content: '\f0184'
 }
 
 .controller.xboxX::before {
-    @apply font-[proportional];
-    content: '\f0185'
+	@apply font-[proportional];
+	content: '\f0185'
 }
 
 .controller.xboxY::before {
-    @apply font-[proportional];
-    content: '\f0186'
+	@apply font-[proportional];
+	content: '\f0186'
 }
 
 .controller.xboxA::before {
-    @apply font-[proportional];
-    content: '\f0187'
+	@apply font-[proportional];
+	content: '\f0187'
 }
 
 .controller.xboxB::before {
-    @apply font-[proportional];
-    content: '\f0188'
+	@apply font-[proportional];
+	content: '\f0188'
 }
 
 .controller.joystickL::before {
-    @apply font-[proportional];
-    content: '\f0189'
+	@apply font-[proportional];
+	content: '\f0189'
 }
 
 .controller.joystickR::before {
-    @apply font-[proportional];
-    content: '\f018A'
+	@apply font-[proportional];
+	content: '\f018A'
 }
 
 .controller.jsLU::before {
-    @apply font-[proportional];
-    content: '\f018B'
+	@apply font-[proportional];
+	content: '\f018B'
 }
 
 .controller.jsLD::before {
-    @apply font-[proportional];
-    content: '\f018C'
+	@apply font-[proportional];
+	content: '\f018C'
 }
 
 .controller.jsLL::before {
-    @apply font-[proportional];
-    content: '\f018D'
+	@apply font-[proportional];
+	content: '\f018D'
 }
 
 .controller.jsLR::before {
-    @apply font-[proportional];
-    content: '\f018E'
+	@apply font-[proportional];
+	content: '\f018E'
 }
 
 .controller.jsRU::before {
-    @apply font-[proportional];
-    content: '\f018F'
+	@apply font-[proportional];
+	content: '\f018F'
 }
 
 .controller.jsRD::before {
-    @apply font-[proportional];
-    content: '\f0190'
+	@apply font-[proportional];
+	content: '\f0190'
 }
 
 .controller.jsRL::before {
-    @apply font-[proportional];
-    content: '\f0191'
+	@apply font-[proportional];
+	content: '\f0191'
 }
 
 .controller.jsRR::before {
-    @apply font-[proportional];
-    content: '\f0192'
+	@apply font-[proportional];
+	content: '\f0192'
 }
 
 .controller.jsLPress::before {
-    @apply font-[proportional];
-    content: '\f0193'
+	@apply font-[proportional];
+	content: '\f0193'
 }
 
 .controller.jsRPress::before {
-    @apply font-[proportional];
-    content: '\f0194'
+	@apply font-[proportional];
+	content: '\f0194'
 }
 
 .controller.dpad::before {
-    @apply font-[proportional];
-    content: '\f0195'
+	@apply font-[proportional];
+	content: '\f0195'
 }
 
 .controller.dpadU::before {
-    @apply font-[proportional];
-    content: '\f0196'
+	@apply font-[proportional];
+	content: '\f0196'
 }
 
 .controller.dpadD::before {
-    @apply font-[proportional];
-    content: '\f0197'
+	@apply font-[proportional];
+	content: '\f0197'
 }
 
 .controller.dpadL::before {
-    @apply font-[proportional];
-    content: '\f0198'
+	@apply font-[proportional];
+	content: '\f0198'
 }
 
 .controller.dpadR::before {
-    @apply font-[proportional];
-    content: '\f0199'
+	@apply font-[proportional];
+	content: '\f0199'
 }
 
 .controller.xboxView::before {
-    @apply font-[proportional];
-    content: '\f019A'
+	@apply font-[proportional];
+	content: '\f019A'
 }
 
 .controller.xboxMenu::before {
-    @apply font-[proportional];
-    content: '\f019B'
+	@apply font-[proportional];
+	content: '\f019B'
 }
 
 .controller.xboxShare::before {
-    @apply font-[proportional];
-    content: '\f019C'
+	@apply font-[proportional];
+	content: '\f019C'
 }
 
 .controller.xboxConnect::before {
-    @apply font-[proportional];
-    content: '\f019D'
+	@apply font-[proportional];
+	content: '\f019D'
 }
 
 .controller.ps::before {
-    @apply font-[proportional];
-    content: '\f019E'
+	@apply font-[proportional];
+	content: '\f019E'
 }
 
 .controller.psTriangle::before {
-    @apply font-[proportional];
-    content: '\f019F'
+	@apply font-[proportional];
+	content: '\f019F'
 }
 
 .controller.psCircle::before {
-    @apply font-[proportional];
-    content: '\f01A0'
+	@apply font-[proportional];
+	content: '\f01A0'
 }
 
 .controller.psCross::before {
-    @apply font-[proportional];
-    content: '\f01A1'
+	@apply font-[proportional];
+	content: '\f01A1'
 }
 
 .controller.psSquare::before {
-    @apply font-[proportional];
-    content: '\f01A2'
+	@apply font-[proportional];
+	content: '\f01A2'
 }
 
 .controller.psMute::before {
-    @apply font-[proportional];
-    content: '\f01A3'
+	@apply font-[proportional];
+	content: '\f01A3'
 }
 
 .controller.psCreate::before {
-    @apply font-[proportional];
-    content: '\f01A4'
+	@apply font-[proportional];
+	content: '\f01A4'
 }
 
 .controller.psOption::before {
-    @apply font-[proportional];
-    content: '\f01A5'
+	@apply font-[proportional];
+	content: '\f01A5'
 }
 
 
 .mahjong.m1::before {
-    @apply font-[proportional];
-    content: '\f0200'
+	@apply font-[proportional];
+	content: '\f0200'
 }
 
 .mahjong.m2::before {
-    @apply font-[proportional];
-    content: '\f0201'
+	@apply font-[proportional];
+	content: '\f0201'
 }
 
 .mahjong.m3::before {
-    @apply font-[proportional];
-    content: '\f0202'
+	@apply font-[proportional];
+	content: '\f0202'
 }
 
 .mahjong.m4::before {
-    @apply font-[proportional];
-    content: '\f0203'
+	@apply font-[proportional];
+	content: '\f0203'
 }
 
 .mahjong.m5::before {
-    @apply font-[proportional];
-    content: '\f0204'
+	@apply font-[proportional];
+	content: '\f0204'
 }
 
 .mahjong.m6::before {
-    @apply font-[proportional];
-    content: '\f0205'
+	@apply font-[proportional];
+	content: '\f0205'
 }
 
 .mahjong.m7::before {
-    @apply font-[proportional];
-    content: '\f0206'
+	@apply font-[proportional];
+	content: '\f0206'
 }
 
 .mahjong.m8::before {
-    @apply font-[proportional];
-    content: '\f0207'
+	@apply font-[proportional];
+	content: '\f0207'
 }
 
 .mahjong.m9::before {
-    @apply font-[proportional];
-    content: '\f0208'
+	@apply font-[proportional];
+	content: '\f0208'
 }
 
 .mahjong.s1::before {
-    @apply font-[proportional];
-    content: '\f0209'
+	@apply font-[proportional];
+	content: '\f0209'
 }
 
 .mahjong.s2::before {
-    @apply font-[proportional];
-    content: '\f020A'
+	@apply font-[proportional];
+	content: '\f020A'
 }
 
 .mahjong.s3::before {
-    @apply font-[proportional];
-    content: '\f020B'
+	@apply font-[proportional];
+	content: '\f020B'
 }
 
 .mahjong.s4::before {
-    @apply font-[proportional];
-    content: '\f020C'
+	@apply font-[proportional];
+	content: '\f020C'
 }
 
 .mahjong.s5::before {
-    @apply font-[proportional];
-    content: '\f020D'
+	@apply font-[proportional];
+	content: '\f020D'
 }
 
 .mahjong.s6::before {
-    @apply font-[proportional];
-    content: '\f020E'
+	@apply font-[proportional];
+	content: '\f020E'
 }
 
 .mahjong.s7::before {
-    @apply font-[proportional];
-    content: '\f020F'
+	@apply font-[proportional];
+	content: '\f020F'
 }
 
 .mahjong.s8::before {
-    @apply font-[proportional];
-    content: '\f0210'
+	@apply font-[proportional];
+	content: '\f0210'
 }
 
 .mahjong.s9::before {
-    @apply font-[proportional];
-    content: '\f0211'
+	@apply font-[proportional];
+	content: '\f0211'
 }
 
 .mahjong.p1::before {
-    @apply font-[proportional];
-    content: '\f0212'
+	@apply font-[proportional];
+	content: '\f0212'
 }
 
 .mahjong.p2::before {
-    @apply font-[proportional];
-    content: '\f0213'
+	@apply font-[proportional];
+	content: '\f0213'
 }
 
 .mahjong.p3::before {
-    @apply font-[proportional];
-    content: '\f0214'
+	@apply font-[proportional];
+	content: '\f0214'
 }
 
 .mahjong.p4::before {
-    @apply font-[proportional];
-    content: '\f0215'
+	@apply font-[proportional];
+	content: '\f0215'
 }
 
 .mahjong.p5::before {
-    @apply font-[proportional];
-    content: '\f0216'
+	@apply font-[proportional];
+	content: '\f0216'
 }
 
 .mahjong.p6::before {
-    @apply font-[proportional];
-    content: '\f0217'
+	@apply font-[proportional];
+	content: '\f0217'
 }
 
 .mahjong.p7::before {
-    @apply font-[proportional];
-    content: '\f0218'
+	@apply font-[proportional];
+	content: '\f0218'
 }
 
 .mahjong.p8::before {
-    @apply font-[proportional];
-    content: '\f0219'
+	@apply font-[proportional];
+	content: '\f0219'
 }
 
 .mahjong.p9::before {
-    @apply font-[proportional];
-    content: '\f021A'
+	@apply font-[proportional];
+	content: '\f021A'
 }
 
 .mahjong.ton::before {
-    @apply font-[proportional];
-    content: '\f021B'
+	@apply font-[proportional];
+	content: '\f021B'
 }
 
 .mahjong.nan::before {
-    @apply font-[proportional];
-    content: '\f021C'
+	@apply font-[proportional];
+	content: '\f021C'
 }
 
 .mahjong.sha::before {
-    @apply font-[proportional];
-    content: '\f021D'
+	@apply font-[proportional];
+	content: '\f021D'
 }
 
 .mahjong.pe::before {
-    @apply font-[proportional];
-    content: '\f021E'
+	@apply font-[proportional];
+	content: '\f021E'
 }
 
 .mahjong.chun::before {
-    @apply font-[proportional];
-    content: '\f021F'
+	@apply font-[proportional];
+	content: '\f021F'
 }
 
 .mahjong.hatsu::before {
-    @apply font-[proportional];
-    content: '\f0220'
+	@apply font-[proportional];
+	content: '\f0220'
 }
 
 .mahjong.haku::before {
-    @apply font-[proportional];
-    content: '\f0221'
+	@apply font-[proportional];
+	content: '\f0221'
 }
 
 .mahjong.hatsuAlt::before {
-    @apply font-[proportional];
-    content: '\f0222'
+	@apply font-[proportional];
+	content: '\f0222'
 }
 
 .mahjong.hakuAlt::before {
-    @apply font-[proportional];
-    content: '\f0223'
+	@apply font-[proportional];
+	content: '\f0223'
 }
 
 .mahjong.haru::before {
-    @apply font-[proportional];
-    content: '\f0224'
+	@apply font-[proportional];
+	content: '\f0224'
 }
 
 .mahjong.natsu::before {
-    @apply font-[proportional];
-    content: '\f0225'
+	@apply font-[proportional];
+	content: '\f0225'
 }
 
 .mahjong.aki::before {
-    @apply font-[proportional];
-    content: '\f0226'
+	@apply font-[proportional];
+	content: '\f0226'
 }
 
 .mahjong.fuyu::before {
-    @apply font-[proportional];
-    content: '\f0227'
+	@apply font-[proportional];
+	content: '\f0227'
 }
 
 .mahjong.ume::before {
-    @apply font-[proportional];
-    content: '\f0228'
+	@apply font-[proportional];
+	content: '\f0228'
 }
 
 .mahjong.ran::before {
-    @apply font-[proportional];
-    content: '\f0229'
+	@apply font-[proportional];
+	content: '\f0229'
 }
 
 .mahjong.kiku::before {
-    @apply font-[proportional];
-    content: '\f022A'
+	@apply font-[proportional];
+	content: '\f022A'
 }
 
 .mahjong.take::before {
-    @apply font-[proportional];
-    content: '\f022B'
+	@apply font-[proportional];
+	content: '\f022B'
 }
 
 .mahjong.m5Red::before {
-    @apply font-[proportional];
-    content: '\f022C'
+	@apply font-[proportional];
+	content: '\f022C'
 }
 
 .mahjong.s5Red::before {
-    @apply font-[proportional];
-    content: '\f022D'
+	@apply font-[proportional];
+	content: '\f022D'
 }
 
 .mahjong.p5Red::before {
-    @apply font-[proportional];
-    content: '\f022E'
+	@apply font-[proportional];
+	content: '\f022E'
 }
 
 .mahjong.m1Base::before {
-    @apply font-[proportional];
-    content: '\f022F'
+	@apply font-[proportional];
+	content: '\f022F'
 }
 
 .mahjong.m2Base::before {
-    @apply font-[proportional];
-    content: '\f0230'
+	@apply font-[proportional];
+	content: '\f0230'
 }
 
 .mahjong.m3Base::before {
-    @apply font-[proportional];
-    content: '\f0231'
+	@apply font-[proportional];
+	content: '\f0231'
 }
 
 .mahjong.m4Base::before {
-    @apply font-[proportional];
-    content: '\f0232'
+	@apply font-[proportional];
+	content: '\f0232'
 }
 
 .mahjong.m5Base::before {
-    @apply font-[proportional];
-    content: '\f0233'
+	@apply font-[proportional];
+	content: '\f0233'
 }
 
 .mahjong.m6Base::before {
-    @apply font-[proportional];
-    content: '\f0234'
+	@apply font-[proportional];
+	content: '\f0234'
 }
 
 .mahjong.m7Base::before {
-    @apply font-[proportional];
-    content: '\f0235'
+	@apply font-[proportional];
+	content: '\f0235'
 }
 
 .mahjong.m8Base::before {
-    @apply font-[proportional];
-    content: '\f0236'
+	@apply font-[proportional];
+	content: '\f0236'
 }
 
 .mahjong.m9Base::before {
-    @apply font-[proportional];
-    content: '\f0237'
+	@apply font-[proportional];
+	content: '\f0237'
 }
 
 .mahjong.mComb::before {
-    @apply font-[proportional];
-    content: '\f0238'
+	@apply font-[proportional];
+	content: '\f0238'
 }
 
 .mahjong.s1Base::before {
-    @apply font-[proportional];
-    content: '\f0239'
+	@apply font-[proportional];
+	content: '\f0239'
 }
 
 .mahjong.s1Comb::before {
-    @apply font-[proportional];
-    content: '\f023A'
+	@apply font-[proportional];
+	content: '\f023A'
 }
 
 .mahjong.s5Base::before {
-    @apply font-[proportional];
-    content: '\f023B'
+	@apply font-[proportional];
+	content: '\f023B'
 }
 
 .mahjong.s5Comb::before {
-    @apply font-[proportional];
-    content: '\f023C'
+	@apply font-[proportional];
+	content: '\f023C'
 }
 
 .mahjong.s7Base::before {
-    @apply font-[proportional];
-    content: '\f023D'
+	@apply font-[proportional];
+	content: '\f023D'
 }
 
 .mahjong.s7Comb::before {
-    @apply font-[proportional];
-    content: '\f023E'
+	@apply font-[proportional];
+	content: '\f023E'
 }
 
 .mahjong.s9Base::before {
-    @apply font-[proportional];
-    content: '\f023F'
+	@apply font-[proportional];
+	content: '\f023F'
 }
 
 .mahjong.s9Comb::before {
-    @apply font-[proportional];
-    content: '\f0240'
+	@apply font-[proportional];
+	content: '\f0240'
 }
 
 .mahjong.p2Base::before {
-    @apply font-[proportional];
-    content: '\f0241'
+	@apply font-[proportional];
+	content: '\f0241'
 }
 
 .mahjong.p2Comb::before {
-    @apply font-[proportional];
-    content: '\f0242'
+	@apply font-[proportional];
+	content: '\f0242'
 }
 
 .mahjong.p3Base::before {
-    @apply font-[proportional];
-    content: '\f0243'
+	@apply font-[proportional];
+	content: '\f0243'
 }
 
 .mahjong.p3Comb1::before {
-    @apply font-[proportional];
-    content: '\f0244'
+	@apply font-[proportional];
+	content: '\f0244'
 }
 
 .mahjong.p3Comb2::before {
-    @apply font-[proportional];
-    content: '\f0245'
+	@apply font-[proportional];
+	content: '\f0245'
 }
 
 .mahjong.p4Base::before {
-    @apply font-[proportional];
-    content: '\f0246'
+	@apply font-[proportional];
+	content: '\f0246'
 }
 
 .mahjong.p4Comb::before {
-    @apply font-[proportional];
-    content: '\f0247'
+	@apply font-[proportional];
+	content: '\f0247'
 }
 
 .mahjong.p5Base::before {
-    @apply font-[proportional];
-    content: '\f0248'
+	@apply font-[proportional];
+	content: '\f0248'
 }
 
 .mahjong.p5Comb1::before {
-    @apply font-[proportional];
-    content: '\f0249'
+	@apply font-[proportional];
+	content: '\f0249'
 }
 
 .mahjong.p5Comb2::before {
-    @apply font-[proportional];
-    content: '\f024A'
+	@apply font-[proportional];
+	content: '\f024A'
 }
 
 .mahjong.p6Base::before {
-    @apply font-[proportional];
-    content: '\f024B'
+	@apply font-[proportional];
+	content: '\f024B'
 }
 
 .mahjong.p6Comb::before {
-    @apply font-[proportional];
-    content: '\f024C'
+	@apply font-[proportional];
+	content: '\f024C'
 }
 
 .mahjong.p7Base::before {
-    @apply font-[proportional];
-    content: '\f024D'
+	@apply font-[proportional];
+	content: '\f024D'
 }
 
 .mahjong.p7Comb::before {
-    @apply font-[proportional];
-    content: '\f024E'
+	@apply font-[proportional];
+	content: '\f024E'
 }
 
 .mahjong.p9Base::before {
-    @apply font-[proportional];
-    content: '\f024F'
+	@apply font-[proportional];
+	content: '\f024F'
 }
 
 .mahjong.p9Comb1::before {
-    @apply font-[proportional];
-    content: '\f0250'
+	@apply font-[proportional];
+	content: '\f0250'
 }
 
 .mahjong.p9Comb2::before {
-    @apply font-[proportional];
-    content: '\f0251'
+	@apply font-[proportional];
+	content: '\f0251'
 }
 
 .mahjong.frameComb::before {
-    @apply font-[proportional];
-    content: '\f0252'
+	@apply font-[proportional];
+	content: '\f0252'
 }
 
 .mahjong.s1j::before {
-    @apply font-[proportional];
-    content: '\f0253'
+	@apply font-[proportional];
+	content: '\f0253'
 }
 
 .mahjong.s1jBase::before {
-    @apply font-[proportional];
-    content: '\f0254'
+	@apply font-[proportional];
+	content: '\f0254'
 }
 
 .mahjong.s1jComb::before {
-    @apply font-[proportional];
-    content: '\f0255'
+	@apply font-[proportional];
+	content: '\f0255'
 }

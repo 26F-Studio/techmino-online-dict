@@ -4,30 +4,30 @@ on:
     repository_dispatch:
     workflow_dispatch:
     schedule:
-        - cron: "0 * * * *"
+        -   cron: "0 * * * *"
 
 jobs:
     update:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
-              with:
-                  submodules: true
+            -   uses: actions/checkout@v2
+                with:
+                    submodules: true
 
-            - name: Pull & update submodules recursively
-              run: |
-                  git submodule update --init --remote
+            -   name: Pull & update submodules recursively
+                run: |
+                    git submodule update --init --remote
 
-            - name: Commit
-              run: |
-                  git config --local user.email "github-actions@noreply.github.com"
-                  git config --local user.name "github-actions"
-                  git add --all
-                  git commit -m "feat(*): update submodule" || echo "No changes"
+            -   name: Commit
+                run: |
+                    git config --local user.email "github-actions@noreply.github.com"
+                    git config --local user.name "github-actions"
+                    git add --all
+                    git commit -m "feat(*): update submodule" || echo "No changes"
 
-            - name: Push changes
-              uses: ad-m/github-push-action@master
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: ${{ github.ref }}
+            -   name: Push changes
+                uses: ad-m/github-push-action@master
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    branch: ${{ github.ref }}
