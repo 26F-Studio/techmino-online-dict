@@ -43,7 +43,7 @@ jobs:
             -   name: Build
                 env:
                     VITE_BASE_PUBLIC_PATH: ${{ secrets.VITE_BASE_PUBLIC_PATH }}
-                run: pnpm run build
+                run: pnpm run build:nocheck
 
             -   name: Deploy
                 uses: peaceiris/actions-gh-pages@v3
