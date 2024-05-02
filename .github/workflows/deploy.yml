@@ -45,6 +45,13 @@ jobs:
                     VITE_BASE_PUBLIC_PATH: ${{ secrets.VITE_BASE_PUBLIC_PATH }}
                 run: pnpm run build:nocheck
 
+            -   name: Commit
+                run: |
+                    git config --local user.email "github-actions@noreply.github.com"
+                    git config --local user.name "github-actions"
+                    git add src/dict/*
+                    git commit -m "feat(*): update submodule" || echo "No changes"
+
             -   name: Deploy
                 uses: peaceiris/actions-gh-pages@v3
                 with:
