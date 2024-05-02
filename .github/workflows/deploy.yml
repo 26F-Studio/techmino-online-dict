@@ -52,6 +52,12 @@ jobs:
                     git add src/dict/* --force
                     git commit -m "feat(dict): update" || echo "No changes"
 
+            -   name: Push changes
+                uses: ad-m/github-push-action@master
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    branch: ${{ github.ref }}
+
             -   name: Deploy
                 uses: peaceiris/actions-gh-pages@v3
                 with:
